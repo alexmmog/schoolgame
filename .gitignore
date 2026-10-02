@@ -1,0 +1,38 @@
+# Local verification output and delivery copies
+/evidence/
+/.test-dist/
+/deliverables/
+/snapshots/
+/references/
+/.art-generation-transfer/
+/.library-transfer*/
+/art-source/candidates/
+/art-review/
+
+# Cocos generated caches and builds
+/project/library/
+/project/temp/
+/project/local/
+/project/profiles/
+/project/build/
+**/node_modules/
+
+# Local editor, OS and credentials
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
+.env
+.env.*
+!.env.example
+*.pem
+*.p12
+*.pfx
+*.key
+id_rsa*
+id_ed25519*
+*.zip
+*.7z
+*.log
+*.bak

@@ -1,0 +1,243 @@
+{
+  "schema": 1,
+  "version": "regenerated-life-comic-art-v1",
+  "assetCount": 6,
+  "artBasis": "New regenerated assets in approved C life-comic direction; not exact old-reference identity matches",
+  "pngBytes": 11136977,
+  "allRGBA8Bytes": 37760080,
+  "packageBudgetBytes": 12582912,
+  "allRGBA8BudgetBytes": 50331648,
+  "singleScreenBudgetBytes": 25165824,
+  "assets": [
+    {
+      "name": "hero-neutral",
+      "path": "project/assets/resources/art/hero-neutral.png",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "bytes": 431365,
+      "sha256": "59a02cc3bdf59ddc1719a19771005ca25cf7ef0484f47846645f54a395831538",
+      "rgba8Bytes": 6290064,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "transparentPixels": 1337970,
+      "nonOpaquePixels": 1571400,
+      "visibleBoundsAlpha16": [
+        435,
+        110,
+        918,
+        1152
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:12.875532+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Full bun, hands, tote/cat motif and shoes visible; inspected on ivory matte; adult face and simpler comic contour; true alpha verified; about 8 percent top/bottom padding at alpha16",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Reusable adult heroine full-body cutout"
+    },
+    {
+      "name": "map-neighborhood",
+      "path": "project/assets/resources/art/map-neighborhood.png",
+      "width": 941,
+      "height": 1672,
+      "mode": "RGB",
+      "bytes": 2475516,
+      "sha256": "d627e7d931eb2ac82c967446c276ec21fa55d4b024d112de6498d957354bd25b",
+      "rgba8Bytes": 6293408,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonOpaquePixels": 0,
+      "visibleBoundsAlpha16": [
+        0,
+        0,
+        941,
+        1672
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:12.924145+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Inspected actual generated pixels; no baked text or interactive elements; chapter backgrounds contain no human figures",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Winding illustrated neighborhood background; dynamic stations and controls separate",
+      "labelAnchors": [
+        [
+          0.3,
+          0.27
+        ],
+        [
+          0.7,
+          0.42
+        ],
+        [
+          0.3,
+          0.6
+        ],
+        [
+          0.7,
+          0.78
+        ]
+      ]
+    },
+    {
+      "name": "scene-campus",
+      "path": "project/assets/resources/art/scene-campus.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "bytes": 2153797,
+      "sha256": "5a0003d29768c8eff42d1dfa4405b046b52e595da4b98e22ce66eb59a4a48894",
+      "rgba8Bytes": 6294152,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonOpaquePixels": 0,
+      "visibleBoundsAlpha16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:12.968552+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Inspected actual generated pixels; no baked text or interactive elements; chapter backgrounds contain no human figures",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Reusable chapter environment strip, independently layered with the same hero Sprite",
+      "edgeNote": "Natural architectural/foreground prop edges may continue outside the frame; no human character is baked in or cropped"
+    },
+    {
+      "name": "scene-store",
+      "path": "project/assets/resources/art/scene-store.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "bytes": 2033313,
+      "sha256": "9b939ebea79f15f6608fc5aadfd2eb4471b3cdac6c72a477df86debd42ddb116",
+      "rgba8Bytes": 6294152,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonOpaquePixels": 0,
+      "visibleBoundsAlpha16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:13.012522+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Inspected actual generated pixels; no baked text or interactive elements; chapter backgrounds contain no human figures",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Reusable chapter environment strip, independently layered with the same hero Sprite",
+      "edgeNote": "Natural architectural/foreground prop edges may continue outside the frame; no human character is baked in or cropped"
+    },
+    {
+      "name": "scene-cafe",
+      "path": "project/assets/resources/art/scene-cafe.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "bytes": 1818803,
+      "sha256": "e9eac4f85dcb5698612c113d93b400d2a8fe91e1841260aa69d2dc5f169e532b",
+      "rgba8Bytes": 6294152,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonOpaquePixels": 0,
+      "visibleBoundsAlpha16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:13.056141+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Inspected actual generated pixels; no baked text or interactive elements; chapter backgrounds contain no human figures",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Reusable chapter environment strip, independently layered with the same hero Sprite",
+      "edgeNote": "Natural architectural/foreground prop edges may continue outside the frame; no human character is baked in or cropped"
+    },
+    {
+      "name": "scene-stage",
+      "path": "project/assets/resources/art/scene-stage.png",
+      "width": 1774,
+      "height": 887,
+      "mode": "RGB",
+      "bytes": 2224183,
+      "sha256": "e1de814986e73d714c73bc5352af10d5913f6abf79fb5ed52c3f19e1fd3ce989",
+      "rgba8Bytes": 6294152,
+      "alphaExtrema": [
+        255,
+        255
+      ],
+      "transparentPixels": 0,
+      "nonOpaquePixels": 0,
+      "visibleBoundsAlpha16": [
+        0,
+        0,
+        1774,
+        887
+      ],
+      "generator": "OpenAI imagegen; original generated PNG bytes preserved",
+      "materializedAt": "2026-10-02T01:55:13.101357+00:00",
+      "referenceMode": "Fresh generation; identical hero PNG reused in all chapters; no inaccessible old reference pixels",
+      "visualCheck": "Inspected actual generated pixels; no baked text or interactive elements; chapter backgrounds contain no human figures",
+      "runtimeVerified": false,
+      "importType": "sprite-frame",
+      "minFilter": "linear",
+      "magFilter": "linear",
+      "mipFilter": "none",
+      "packable": false,
+      "role": "Reusable chapter environment strip, independently layered with the same hero Sprite",
+      "edgeNote": "Natural architectural/foreground prop edges may continue outside the frame; no human character is baked in or cropped"
+    }
+  ],
+  "expressionVariants": {
+    "status": "deferred",
+    "reason": "Windows local reference editing request rejected during parameter deserialization: AbsolutePathBuf deserialized without a base path at line 1 column 173; no generation begun and no policy denial observed",
+    "attempts": 1,
+    "workaroundUsed": false
+  },
+  "runtimeFrameVerified": false,
+  "inputVerified": false,
+  "contactSheetIsGameplayScreenshot": false,
+  "normalization": "Original generated PNG bytes retained; no programmatic replacement art or resampling. Actual tool-selected dimensions accepted after inspection and budget check."
+}

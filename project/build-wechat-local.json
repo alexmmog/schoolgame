@@ -1,0 +1,24 @@
+{
+  "name": "ChineseQuizValidation",
+  "debug": false,
+  "startScene": "ca5a9a21-8ddd-4f48-9f01-b0966f545d60",
+  "scenes": [
+    {
+      "url": "db://assets/Main.scene",
+      "uuid": "ca5a9a21-8ddd-4f48-9f01-b0966f545d60"
+    }
+  ],
+  "buildPath": "project://build",
+  "md5Cache": false,
+  "platform": "wechatgame",
+  "outputName": "wechatgame",
+  "packages": {
+    "wechatgame": {
+      "orientation": "portrait",
+      "appid": "",
+      "separateEngine": false,
+      "remoteServerAddress": ""
+    }
+  },
+  "mainBundleCompressionType": "merge_dep"
+}
