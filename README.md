@@ -6,7 +6,7 @@ Cocos Creator **3.8.8** 的独立竖屏中文答题原型，版本 `0.2.0`。四
 
 ## 打开项目
 
-需要已安装的 Cocos Creator **3.8.8**。本轮验证使用 Windows、Node **24.13.0**、PowerShell **7.6.6** 和 Creator 内置 TypeScript **5.8.2**；脚本不会自动安装软件、登录或下载 npm 依赖。
+需要已安装的 Cocos Creator **3.8.8**。v0.1 构建验证使用 Windows、Node **24.13.0**、PowerShell **7.6.6**；v0.2 使用 macOS 和 Creator 内置 TypeScript **5.8.2** 验证代码与桌面预览；脚本不会自动安装软件、登录或下载 npm 依赖。
 
 1. 克隆本仓库。
 2. 在 Cocos Dashboard 导入 `project` 子目录，选择 Creator 3.8.8。
@@ -90,4 +90,4 @@ COCOS_CREATOR_ROOT='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents'
 
 v0.2 使用实际 Creator TypeScript 5.8.2 和引擎类型检查。原 512 条最长运行路径保留，增加 256 条近期历史饱和路径。67 题均有难度和逐题编辑记录，仍为草稿，未完成独立人工双审。详见 [验证报告](TEST-REPORT.md)、[题目审校](docs/V02-QUESTION-REVIEW.md)、[容量证明](CAPACITY-PROOF.md) 和 [修订记录](REVISION-NOTES.md)。
 
-v0.1 的官方 Web 构建及六张 PNG 导入验证记录保留；v0.2 的代码与引擎类型已通过 macOS 本机检查；新版编辑器预览实测等待 Mac 解锁并重新导入，未重新执行 Windows Web 发布构建。手机安全区、性能及微信目标仍需后续验证。当前 UI 不调用广告，本次没有公开部署。
+v0.1 的官方 Web 构建及六张 PNG 导入验证记录保留；v0.2 的代码与引擎类型已通过 macOS 本机检查，桌面编辑器预览已完成四站通关、换题、失败重整、回顾、再次开局与关闭标签重开恢复；未重新执行 Windows Web 发布构建。手机安全区、性能及微信目标仍需后续验证。当前 UI 不调用广告，本次没有公开部署。
