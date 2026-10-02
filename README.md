@@ -90,4 +90,4 @@ COCOS_CREATOR_ROOT='/Applications/Cocos/Creator/3.8.8/CocosCreator.app/Contents'
 
 v0.2 使用实际 Creator TypeScript 5.8.2 和引擎类型检查。原 512 条最长运行路径保留，增加 256 条近期历史饱和路径。67 题均有难度和逐题编辑记录，仍为草稿，未完成独立人工双审。详见 [验证报告](TEST-REPORT.md)、[题目审校](docs/V02-QUESTION-REVIEW.md)、[容量证明](CAPACITY-PROOF.md) 和 [修订记录](REVISION-NOTES.md)。
 
-v0.1 的官方 Web 构建及六张 PNG 导入验证记录保留；v0.2 的新代码本轮使用 macOS 编辑器预览验证，未重新执行 Windows Web 发布构建。手机安全区、性能及微信目标仍需后续验证。当前 UI 不调用广告，本次没有公开部署。
+v0.1 的官方 Web 构建及六张 PNG 导入验证记录保留；v0.2 的代码与引擎类型已通过 macOS 本机检查；新版编辑器预览实测等待 Mac 解锁并重新导入，未重新执行 Windows Web 发布构建。手机安全区、性能及微信目标仍需后续验证。当前 UI 不调用广告，本次没有公开部署。
