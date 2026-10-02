@@ -36,3 +36,5 @@ console.log(messages.join('\n'));
 require(path.join(root, 'tests/verification.test.cjs'));
 require(path.join(root, 'tests/first-playable.test.cjs'));
 require(path.join(root, 'tests/art-assets.test.cjs'));
+require(path.join(root, 'tests/replay.test.cjs'));
+require(path.join(root, 'tests/content-v02.test.cjs'));

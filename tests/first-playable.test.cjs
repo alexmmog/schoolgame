@@ -3,10 +3,11 @@ const assert=require('node:assert/strict');
 const fs=require('node:fs');
 const {parseDraftBank,STATIONS,ROUTES,hashText,bankCapacityCertificates,stationCapacity}=require('../.test-dist/core/content.js');
 const {RunSession,validateRunSnapshot}=require('../.test-dist/core/run.js');
-const {RunSaveRepository,RUN_SAVE_PREFIX}=require('../.test-dist/platform/run-save.js');
+const {RunSaveRepository,runSavePrefix}=require('../.test-dist/platform/run-save.js');
 const {phoneLayout,questionGeometry,reviewGeometry}=require('../.test-dist/ui/layout.js');
 const raw=JSON.parse(fs.readFileSync(require('node:path').join(__dirname,'../project/assets/resources/draft-bank.json'),'utf8'));
 const bank=parseDraftBank(raw);
+const RUN_SAVE_PREFIX=runSavePrefix(bank);
 function context(seed='test-seed',mode='timed',customBank=bank){return {s:new RunSession(customBank,seed,mode,0),now:0};}
 function advance(x,ms){x.now+=ms;x.s.advance(x.now);}
 function start(x,route){if(route)assert.equal(x.s.selectRoute(route),true);assert.equal(x.s.startStation(x.now),true);advance(x,350);}
@@ -246,8 +247,8 @@ test('invalid safe-area input falls back safely, and unsupported choice count is
 
 test('password scenario states the required password before grounding the correct message',()=>{
  const q=bank.questions.find(q=>q.id==='comic-s1-03');
- assert.match(q.prompt,/口令“向日葵”/);assert.match(q.prompt,/口令＋昵称/);
- assert.equal(q.options.find(o=>o.id===q.correctId).text,'向日葵＋小满');assert.equal(q.revision,2);
+ assert.match(q.prompt,/口令.*“向日葵”/);assert.match(q.prompt,/口令＋.*昵称/);assert.match(q.prompt,/昵称.*“小满”/);
+ assert.equal(q.options.find(o=>o.id===q.correctId).text,'向日葵＋小满');assert.ok(q.revision>=2);
 });
 test('quantity and redemption drafts ask exactly the conditions established in their scenarios',()=>{
  const quantity=bank.questions.find(q=>q.id==='comic-s1-09'),redemption=bank.questions.find(q=>q.id==='comic-s1-06');
@@ -318,7 +319,7 @@ test('exhaustive independent category proof covers every legal restarted outcome
   certificates:bankCapacityCertificates(bank),runtimeWorstPaths:512,...proof},null,2)+'\n');
 });
 test('future or incompatible app and engine versions protect both slots even alongside a valid older slot',()=>{
- for(const [field,value] of [['appVersion','0.2.0'],['engineVersion','3.9.0'],['appVersion','0.0.9'],['engineVersion','3.8.7']]){
+ for(const [field,value] of [['appVersion','0.3.0'],['engineVersion','3.9.0'],['appVersion','0.0.9'],['engineVersion','3.8.7']]){
   const store=memory(),x=context(`future-${field}-${value}`),writer=new RunSaveRepository(store,bank);
   writer.load(0,'new','timed');assert.equal(writer.save(x.s).ok,true);
   const data=x.s.snapshot;data[field]=value;const payload=JSON.stringify(data);

@@ -5,6 +5,7 @@ export type Route = 'travel' | 'nature' | 'media' | 'interests';
 export interface DraftQuestion {
  readonly id: string; readonly revision: number; readonly factCluster: string;
  readonly stage: number; readonly domain: Domain; readonly cognition: Cognition;
+ readonly difficulty:1|2|3;readonly difficultyRationale:string;readonly editReason:string;
  readonly prompt: string; readonly options: readonly { readonly id: string; readonly text: string }[];
  readonly correctId: string; readonly explanation: string;
  readonly distractorNotes: Readonly<Record<string,string>>;
@@ -38,15 +39,17 @@ export function hashText(text:string): string {
 export function parseDraftBank(value:unknown): DraftBank {
  if(!value || typeof value!=='object') throw new Error('题包不是对象');
  const raw=value as Record<string,unknown>;
- if(raw.schema!==1 || raw.scope!=='prototype-draft' || typeof raw.version!=='string'
+ if(raw.schema!==1 || raw.scope!=='prototype-draft' || typeof raw.version!=='string'||!raw.version||raw.version.length>100
   || !Array.isArray(raw.questions) || raw.questions.length<24 || raw.questions.length>2000) throw new Error('草稿题包版本或范围错误');
  const ids=new Set<string>(), clusters=new Set<string>();
  const questions=raw.questions.map((entry:unknown):DraftQuestion=>{
   if(!entry || typeof entry!=='object')throw new Error('题目对象错误');
   const q=entry as DraftQuestion;
-  if(typeof q.id!=='string'||!q.id||ids.has(q.id)||typeof q.factCluster!=='string'||!q.factCluster||clusters.has(q.factCluster)
+  if(typeof q.id!=='string'||!q.id||q.id.length>160||ids.has(q.id)||typeof q.factCluster!=='string'||!q.factCluster||q.factCluster.length>160||clusters.has(q.factCluster)
    ||!Number.isInteger(q.revision)||q.revision<1||q.revision>1000||!Number.isInteger(q.stage)||q.stage<0||q.stage>3||!Object.hasOwnProperty.call(DOMAIN_NAMES,q.domain)
    ||!['common','context','internet'].includes(q.cognition)||q.lifecycle!=='draft'
+   ||![1,2,3].includes(q.difficulty)||typeof q.difficultyRationale!=='string'||!q.difficultyRationale.trim()||q.difficultyRationale.length>300
+   ||typeof q.editReason!=='string'||!q.editReason.trim()||q.editReason.length>300
    ||!['short','scenario'].includes(q.kind)||![25,40].includes(q.seconds)
    ||typeof q.prompt!=='string'||!q.prompt.trim()||q.prompt.length>(q.kind==='short'?55:110)
    ||typeof q.explanation!=='string'||!q.explanation.trim()||q.explanation.length>65
@@ -63,6 +66,8 @@ export function parseDraftBank(value:unknown): DraftBank {
  }).sort((a,b)=>a.id.localeCompare(b.id));
  const bank:DraftBank={schema:1,version:raw.version,scope:'prototype-draft',hash:hashText(JSON.stringify(questions)),questions};
  if(bankCapacityCertificates(bank).some(c=>!c.certificate.sufficient))throw new Error('一次免费重整的路线或最坏路径题池不足');
+ if(questions.some(q=>q.stage===0?q.difficulty!==1:q.stage===1?q.difficulty!==2:q.stage===2?q.difficulty<2:q.difficulty!==3)
+  ||questions.filter(q=>q.stage===2&&q.difficulty===3).length<8)throw new Error('草稿题包难度递进不完整');
  return bank;
 }
 export function stationCapacity(pool:readonly DraftQuestion[],stage:number,route:Route|null,skipAvailable:boolean,includeFreeRestart=false):CapacityCertificate {

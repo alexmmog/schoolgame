@@ -3,6 +3,7 @@ import {_decorator,Component,Node,Canvas,Camera,UITransform,Layers,view,Resoluti
 import {DraftBank,parseDraftBank,DOMAIN_NAMES,STATIONS,Route,ROUTES} from './core/content';
 import {RunSession,Mode,HistoryEntry} from './core/run';
 import {RunSaveRepository} from './platform/run-save';
+import {RecentSaveRepository} from './platform/recent-save';
 import {cocosStorage,subscribeLifecycle} from './platform/cocos-platform';
 import {ComicUI,INK,IVORY,PAPER,CORAL,CYAN,GRAY,MUTED,GOLD} from './ui/ComicUI';
 import {ComicArt} from './ui/ComicArt';
@@ -14,6 +15,7 @@ const {ccclass}=_decorator;
 export class QuizApp extends Component {
  private ui!:ComicUI;private layout!:PhoneLayout;private bank!:DraftBank;private session!:RunSession;private save!:RunSaveRepository;
  private art?:ComicArt;
+ private recent!:RecentSaveRepository;private recentNote='';
  private screen:'home'|'play'|'confirm-new'|'review'='home';private selectedMode:Mode='timed';
  private storageNote='正在加载草稿题包…';private saved=false;private hasResume=false;private epoch=0;private disposed=false;
  private inspectedStation=0;private reviewIndex=0;private timerLabel?:Label;private saveLabel?:Label;private interactionNote='';private lastCheckpoint=0;private unsubscribe?:()=>void;
@@ -38,9 +40,11 @@ export class QuizApp extends Component {
   });
  }
  private initializeRun():void {
+  this.recent=new RecentSaveRepository(cocosStorage);this.recentNote=this.recent.load().note;
   this.save=new RunSaveRepository(cocosStorage,this.bank);
   const loaded=this.save.load(this.now(),this.seed(),'timed');this.session=loaded.session;this.storageNote=loaded.note;
   this.hasResume=['restored','fallback'].includes(loaded.status);this.selectedMode=this.session.mode;this.inspectedStation=this.session.snapshot.stage;
+  this.recordEndedRun();
   this.unsubscribe=subscribeLifecycle(()=>{this.session.pause(this.now());this.persist();this.render();},
    ()=>{this.session.advance(this.now());this.readLayout();this.render();});
   this.lastCheckpoint=this.now();this.render();
@@ -66,8 +70,10 @@ export class QuizApp extends Component {
  private y(offset:number):number{return this.layout.top+offset*this.layout.scale;}
  private h(height:number):number{return height*this.layout.scale;}
  private loadingError(message:string):void {this.ui.clear();this.ui.text('LoadError',message,195,380,330,200,20,INK,'center');}
- private persist():void {const result=this.save.save(this.session);this.saved=result.ok;this.storageNote=result.note;this.hasResume=true;
-  if(this.saveLabel){this.saveLabel.string=this.storageNote;this.saveLabel.color=this.saved?MUTED:INK;}}
+ private recordEndedRun():void {if(this.session.phase==='result'||this.recent.needsRetry)this.recentNote=this.recent.record(this.session).note;}
+ private get statusNote():string {return this.recentNote?`${this.saved?'进度已保存。':this.storageNote}\n${this.recentNote}`:this.storageNote;}
+ private persist():void {this.recordEndedRun();const result=this.save.save(this.session);this.saved=result.ok;this.storageNote=result.note;this.hasResume=true;
+  if(this.saveLabel){this.saveLabel.string=this.statusNote;this.saveLabel.color=this.saved&&!this.recentNote?MUTED:INK;}}
  private action(fn:()=>void,persist=true):()=>void {
   const epoch=this.epoch;return ()=>{if(this.disposed||this.epoch!==epoch)return;this.interactionNote='';fn();if(persist)this.persist();this.render();};
  }
@@ -79,7 +85,7 @@ export class QuizApp extends Component {
   this.ui.text('PageSubtitle',subtitle,195,this.y(57),this.layout.width,36,15,MUTED,'center');
  }
  private footer():void {
-  this.saveLabel=this.ui.text('SaveStatus',this.storageNote,this.layout.left+(this.layout.width-98)/2,this.y(729),this.layout.width-98,43,13,this.saved?MUTED:INK,'left');
+  this.saveLabel=this.ui.text('SaveStatus',this.statusNote,this.layout.left+(this.layout.width-98)/2,this.y(729),this.layout.width-98,54,12,this.saved&&!this.recentNote?MUTED:INK,'left');
   this.ui.button('RetrySave','保存',W-this.layout.right-32.5,this.y(729),65,48,this.action(()=>{}),true,PAPER,16);
  }
  private render():void {
@@ -91,9 +97,9 @@ export class QuizApp extends Component {
    case 'stage-result':this.stageResult();break;case 'failed':this.failed();break;case 'result':this.result();break;case 'content-unavailable':this.unavailable();break;
   }
  }
- private begin():void {this.session=new RunSession(this.bank,this.seed(),this.selectedMode,this.now());this.screen='play';this.inspectedStation=0;}
+ private begin():void {this.recordEndedRun();this.session=new RunSession(this.bank,this.seed(),this.selectedMode,this.now(),undefined,this.recent.history);this.screen='play';this.inspectedStation=0;}
  private home():void {
-  this.heading('这题我来','生活漫画 · 新插画试玩版');this.ui.panel('TitleSpeech',142,this.y(144),220,this.h(72),PAPER);
+  this.heading('这题我来','生活漫画 · 难度递进试玩版');this.ui.panel('TitleSpeech',142,this.y(144),220,this.h(72),PAPER);
   this.ui.text('HeroLine','课本合上，\n生活开场！',142,this.y(144),190,this.h(60),23,INK,'center');this.ui.character(248,this.y(277),0.93*this.layout.scale);
   this.ui.text('DraftBankLabel',`${this.bank.questions.length} 道原创草稿 · 尚未独立双审`,195,this.y(410),this.layout.width,28,16,INK,'center');
   const left=this.layout.left+this.layout.width/4,right=390-this.layout.right-this.layout.width/4,width=this.layout.width/2-7;
@@ -102,7 +108,7 @@ export class QuizApp extends Component {
   this.ui.text('BriefRules','每站 3 格从容 · 答对不回血\n一局 1 次换题、1 次免费重整',195,this.y(535),this.layout.width,70,18,INK,'center');
   this.button('NewRun','开始接招',608,()=>{if(this.hasResume&&this.session.phase!=='result')this.screen='confirm-new';else this.begin();});
   if(this.hasResume)this.button('ResumeRun',this.session.phase==='result'?'查看上次结果':`继续第 ${this.session.snapshot.stage+1} 站`,674,()=>{this.screen='play';this.inspectedStation=this.session.snapshot.stage;},true,CYAN);
-  this.ui.text('PrototypeScope',`仅本地开发试玩 · 微信与真实广告暂缓\n${this.storageNote}`,195,this.y(730),this.layout.width,56,13,MUTED,'center');
+  this.ui.text('PrototypeScope',`仅本地开发试玩 · 微信与真实广告暂缓\n${this.statusNote}`,195,this.y(730),this.layout.width,56,12,MUTED,'center');
  }
  private confirmNew():void {
   this.heading('先和这一局告个别','不会覆盖其他项目的存档');this.ui.character(195,this.y(237),0.72);
@@ -135,7 +141,7 @@ export class QuizApp extends Component {
     this.ui.text(`Promise-${route}`,ROUTES[route].promise,x,this.y(650),width,40,12,INK,'center');}
    this.button('EnterStation','上场 · 锁定这条路线',694,()=>{this.session.startStation(this.now());},!!s.routes[stage]);
   }else{this.ui.text('StationLine',STATIONS[stage].line,195,this.y(615),this.layout.width,58,20,INK,'center');this.button('EnterStation','上场接招',688,()=>{this.session.startStation(this.now());});}
-  this.saveLabel=this.ui.text('MapSave',this.storageNote,195,this.y(742),this.layout.width,29,12,MUTED,'center');
+  this.saveLabel=this.ui.text('MapSave',this.statusNote,195,this.y(742),this.layout.width,42,12,MUTED,'center');
  }
  private hud():void {
   const s=this.session.snapshot;this.ui.text('StationHeading',`${s.stage+1}. ${STATIONS[s.stage].name}`,148,this.y(16),this.layout.width-92,37,23);

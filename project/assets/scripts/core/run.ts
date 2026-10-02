@@ -1,6 +1,8 @@
 import { DraftBank, DraftQuestion, Domain, Route, ROUTES, STATIONS, hashText, stationCapacity } from './content';
+import { APP_VERSION, ENGINE_VERSION, RULESET } from './versions';
+import { RecentRun, preferRecentQuestions, validateRecentRuns } from './recent';
 
-export const RULESET = 'life-comic-slice-rules-v1';
+export { RULESET } from './versions';
 export type Mode = 'timed' | 'relaxed';
 export type Phase = 'map' | 'preparing' | 'question' | 'feedback' | 'stage-result' | 'failed' | 'result' | 'content-unavailable';
 export type Outcome = 'correct' | 'wrong' | 'timeout' | 'skipped';
@@ -16,10 +18,11 @@ export interface StationResult {
  composure:number; answerScore:number; clearBonus:number;
 }
 export interface RunSnapshot {
- schema:2; appVersion:'0.1.0'; engineVersion:'3.8.8'; ruleset:string; bankVersion:string; bankHash:string;
+ schema:2; appVersion:typeof APP_VERSION; engineVersion:typeof ENGINE_VERSION; ruleset:string; bankVersion:string; bankHash:string;
  runId:string; seed:string; questionRng:number; optionRng:number; mode:Mode; phase:Phase;
  revision:number; stage:number; attemptNumber:number; instanceNumber:number; attemptId:string;
  routes:(Route|null)[]; completed:StationResult[]; correct:number; wrong:number; timeouts:number;
+ recentRuns:RecentRun[];
  composure:number; streak:number; attemptScore:number; skipped:number; freeRestarts:number;
  seenIds:string[]; seenClusters:string[]; history:HistoryEntry[]; current:QuestionState|null;
  feedbackNext:'question'|'stage-result'|'failed'|null; paused:boolean;
@@ -31,12 +34,12 @@ function nextRandom(seed:number): {state:number;value:number} {
  const state=(Math.imul(seed,1664525)+1013904223)>>>0;
  return {state,value:state/0x100000000};
 }
-function fresh(bank:DraftBank,seed:string,mode:Mode):RunSnapshot {
+function fresh(bank:DraftBank,seed:string,mode:Mode,recentRuns:readonly RecentRun[]):RunSnapshot {
  const runId=`comic-${seed}`;
- return {schema:2,appVersion:'0.1.0',engineVersion:'3.8.8',ruleset:RULESET,bankVersion:bank.version,bankHash:bank.hash,
+ return {schema:2,appVersion:APP_VERSION,engineVersion:ENGINE_VERSION,ruleset:RULESET,bankVersion:bank.version,bankHash:bank.hash,
   runId,seed,questionRng:parseInt(hashText(seed+'questions'),16),optionRng:parseInt(hashText(seed+'options'),16),mode,
   phase:'map',revision:0,stage:0,attemptNumber:1,instanceNumber:0,attemptId:`${runId}-a1`,
-  routes:[null,null,null,null],completed:[],correct:0,wrong:0,timeouts:0,composure:3,streak:0,attemptScore:0,
+  routes:[null,null,null,null],recentRuns:validateRecentRuns(recentRuns),completed:[],correct:0,wrong:0,timeouts:0,composure:3,streak:0,attemptScore:0,
   skipped:0,freeRestarts:0,seenIds:[],seenClusters:[],history:[],current:null,feedbackNext:null,paused:false,terminalReason:null};
 }
 
@@ -45,9 +48,9 @@ export class RunSession {
  private state:RunSnapshot;
  private lastNow:number;
  readonly restoreStatus:'new'|'restored';
- constructor(readonly bank:DraftBank,seed:string,mode:Mode,now:number,saved?:string) {
+ constructor(readonly bank:DraftBank,seed:string,mode:Mode,now:number,saved?:string,recentRuns:readonly RecentRun[]=[]) {
   if(!seed||seed.length>100||!['timed','relaxed'].includes(mode)||!Number.isFinite(now))throw new Error('invalid-run-input');
-  this.state=saved ? validateRunSnapshot(JSON.parse(saved),bank) : fresh(bank,seed,mode);
+  this.state=saved ? validateRunSnapshot(JSON.parse(saved),bank) : fresh(bank,seed,mode,recentRuns);
   this.restoreStatus=saved?'restored':'new';
   // A reload cannot resume a reading clock without the player's explicit action.
   if(saved && ['question','preparing','feedback'].includes(this.state.phase))this.state.paused=true;
@@ -99,7 +102,7 @@ export class RunSession {
    &&!(route&&settled<2&&!ROUTES[route].domains.includes(q.domain)));
  }
  private candidate():{q:DraftQuestion;rng:number}|null {
-  const candidates=this.eligible();if(!candidates.length)return null;
+  const candidates=preferRecentQuestions(this.eligible(),this.state.recentRuns);if(!candidates.length)return null;
   const counts:Partial<Record<Domain,number>>={};
   for(const h of this.state.history.filter(h=>!h.discarded&&h.outcome!=='skipped')){
    const domain=this.bank.questions.find(q=>q.id===h.questionId)!.domain;counts[domain]=(counts[domain]??0)+1;
@@ -232,8 +235,9 @@ function shortString(s:unknown):s is string{return typeof s==='string'&&s.length
 export function validateRunSnapshot(value:unknown,bank:DraftBank):RunSnapshot {
  if(!value||typeof value!=='object')throw new Error('save-object');
  const s=value as RunSnapshot;
- if(s.schema!==2||s.appVersion!=='0.1.0'||s.engineVersion!=='3.8.8'||s.ruleset!==RULESET||s.bankVersion!==bank.version||s.bankHash!==bank.hash)
+ if(s.schema!==2||s.appVersion!==APP_VERSION||s.engineVersion!==ENGINE_VERSION||s.ruleset!==RULESET||s.bankVersion!==bank.version||s.bankHash!==bank.hash)
   throw new Error('save-version');
+ validateRecentRuns(s.recentRuns);
  if(!shortString(s.runId)||!shortString(s.seed)||!shortString(s.attemptId)||!['timed','relaxed'].includes(s.mode)
   ||!['map','preparing','question','feedback','stage-result','failed','result','content-unavailable'].includes(s.phase)
   ||!integer(s.revision,0,100000)||!integer(s.stage,0,3)||!integer(s.attemptNumber,1,8)||!integer(s.instanceNumber,0,100)

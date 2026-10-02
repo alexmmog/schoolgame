@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "version": "life-comic-draft67-v2",
+  "version": "life-comic-draft67-v3",
   "scope": "prototype-draft",
   "title": "生活漫画 · 67 道原创草稿",
   "releaseQuestionCount": 360,
@@ -13,6 +13,8 @@
       "stage": 0,
       "domain": "life",
       "cognition": "common",
+      "difficulty": 1,
+      "difficultyRationale": "单次小时到分钟换算，熟悉短题操作。",
       "prompt": "小满把休息计时器设为 1 小时。换成分钟是多少？",
       "options": [
         {
@@ -27,13 +29,14 @@
       "correctId": "comic-s1-01-choice-1",
       "explanation": "1 小时等于 60 分钟，分钟不是百进制。",
       "distractorNotes": {
-        "comic-s1-01-choice-2": "“100 分钟”不符合题面条件。1 小时等于 60 分钟，分钟不是百进制。"
+        "comic-s1-01-choice-2": "误把一小时当成一百分钟。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：稳定单位换算、两个选项均对应常见进制判断。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "1 小时等于 60 分钟，分钟不是百进制。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
@@ -45,6 +48,8 @@
       "stage": 0,
       "domain": "travel",
       "cognition": "common",
+      "difficulty": 1,
+      "difficultyRationale": "单次从约定时刻减去提前量。",
       "prompt": "约好的碰面时间是 09:20，小满提前 15 分钟到场。她几点到？",
       "options": [
         {
@@ -67,35 +72,38 @@
       "correctId": "comic-s1-02-choice-1",
       "explanation": "从 09:20 往前减 15 分钟，是 09:05。",
       "distractorNotes": {
-        "comic-s1-02-choice-2": "“09:15”不符合题面条件。从 09:20 往前减 15 分钟，是 09:05。",
-        "comic-s1-02-choice-3": "“09:35”不符合题面条件。从 09:20 往前减 15 分钟，是 09:05。",
-        "comic-s1-02-choice-4": "“08:20”不符合题面条件。从 09:20 往前减 15 分钟，是 09:05。"
+        "comic-s1-02-choice-2": "只提前5分钟，未减15分钟。",
+        "comic-s1-02-choice-3": "把提前15分钟算成推后15分钟。",
+        "comic-s1-02-choice-4": "提前一小时而不是15分钟。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：短题只计算一次时间差，错误答案对应方向或数值误读。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "从 09:20 往前减 15 分钟，是 09:05。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s1-03",
-      "revision": 2,
+      "revision": 3,
       "factCluster": "comic-s1-03-fact",
       "stage": 0,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构社团公告给出口令“向日葵”，要求“口令＋昵称”。小满哪条报名消息符合要求？",
+      "difficulty": 1,
+      "difficultyRationale": "按给定格式填写已知信息，只需一次匹配。",
+      "prompt": "小满的昵称是“小满”。社团口令为“向日葵”，要求提交“口令＋自己的昵称”。哪条符合？",
       "options": [
         {
           "id": "comic-s1-03-choice-1",
-          "text": "我来啦"
+          "text": "向日葵"
         },
         {
           "id": "comic-s1-03-choice-2",
-          "text": "收到"
+          "text": "向日葵＋向日葵"
         },
         {
           "id": "comic-s1-03-choice-3",
@@ -107,18 +115,19 @@
         }
       ],
       "correctId": "comic-s1-03-choice-3",
-      "explanation": "公告的口令是“向日葵”；加上昵称“小满”才完整符合要求。",
+      "explanation": "口令与自己的昵称都要有，故提交“向日葵＋小满”。",
       "distractorNotes": {
-        "comic-s1-03-choice-1": "“我来啦”不符合题面条件。公告的口令是“向日葵”；加上昵称“小满”才完整符合要求。",
-        "comic-s1-03-choice-2": "“收到”不符合题面条件。公告的口令是“向日葵”；加上昵称“小满”才完整符合要求。",
-        "comic-s1-03-choice-4": "“小满”不符合题面条件。公告的口令是“向日葵”；加上昵称“小满”才完整符合要求。"
+        "comic-s1-03-choice-1": "只填口令，缺少昵称。",
+        "comic-s1-03-choice-2": "第二项重复口令，未填自己的昵称。",
+        "comic-s1-03-choice-4": "只填昵称，缺少口令。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "公告的口令是“向日葵”；加上昵称“小满”才完整符合要求。",
+      "editReason": "将无关回复改为漏填或填错字段，明确昵称归属。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "口令与自己的昵称都要有，故提交“向日葵＋小满”。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
@@ -129,6 +138,8 @@
       "stage": 0,
       "domain": "language",
       "cognition": "common",
+      "difficulty": 1,
+      "difficultyRationale": "从已知星期顺数两天，一次时间推算。",
       "prompt": "今天是星期三，约定“两天后见”。约定的是星期几？",
       "options": [
         {
@@ -143,13 +154,14 @@
       "correctId": "comic-s1-04-choice-2",
       "explanation": "从星期三往后数两天，是星期五。",
       "distractorNotes": {
-        "comic-s1-04-choice-1": "“星期四”不符合题面条件。从星期三往后数两天，是星期五。"
+        "comic-s1-04-choice-1": "只向后数了一天。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：不涉及日期边界或外部信息，适合作为熟悉站。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "从星期三往后数两天，是星期五。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
@@ -161,6 +173,8 @@
       "stage": 0,
       "domain": "travel",
       "cognition": "context",
+      "difficulty": 1,
+      "difficultyRationale": "把前方人数加自己，单次位置判断。",
       "prompt": "取餐队伍里，小满前面有两个人。按当前队列，她排第几？",
       "options": [
         {
@@ -183,15 +197,16 @@
       "correctId": "comic-s1-05-choice-3",
       "explanation": "前面有两人，再加小满自己，她排第三。",
       "distractorNotes": {
-        "comic-s1-05-choice-1": "“第一”不符合题面条件。前面有两人，再加小满自己，她排第三。",
-        "comic-s1-05-choice-2": "“第二”不符合题面条件。前面有两人，再加小满自己，她排第三。",
-        "comic-s1-05-choice-4": "“第四”不符合题面条件。前面有两人，再加小满自己，她排第三。"
+        "comic-s1-05-choice-1": "忽略前面的两个人。",
+        "comic-s1-05-choice-2": "只数前方人数，漏掉自己。",
+        "comic-s1-05-choice-4": "多算了一个未出现的人。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：队列条件明确，选项均为相邻排位。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "前面有两人，再加小满自己，她排第三。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
@@ -203,6 +218,8 @@
       "stage": 0,
       "domain": "digital",
       "cognition": "context",
+      "difficulty": 1,
+      "difficultyRationale": "核查同一码是否已经用过，一次规则应用。",
       "prompt": "虚构门票写着“本码仅可核销一次”。小满已核销该码，还能再次核销同一个码吗？",
       "options": [
         {
@@ -217,24 +234,27 @@
       "correctId": "comic-s1-06-choice-2",
       "explanation": "题面规定仅可核销一次；已核销后，不能再次核销同一个码。",
       "distractorNotes": {
-        "comic-s1-06-choice-1": "“可以再次核销”不符合题面条件。题面规定仅可核销一次；已核销后，不能再次核销同一个码。"
+        "comic-s1-06-choice-1": "忽略题面规定同一码只可核销一次。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：一次核销规则及已核销状态完整，不引入真实票务限制。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "题面规定仅可核销一次；已核销后，不能再次核销同一个码。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s1-07",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s1-07-fact",
       "stage": 0,
       "domain": "language",
       "cognition": "context",
+      "difficulty": 1,
+      "difficultyRationale": "辨别一条回复在单一语境中的用途。",
       "prompt": "群公告只请大家确认看过安排。小满回“收到”。这条回复主要做什么？",
       "options": [
         {
@@ -243,30 +263,31 @@
         },
         {
           "id": "comic-s1-07-choice-2",
-          "text": "更改安排"
+          "text": "确认会参加"
         },
         {
           "id": "comic-s1-07-choice-3",
-          "text": "介绍自己"
+          "text": "请求更改时间"
         },
         {
           "id": "comic-s1-07-choice-4",
-          "text": "提出投票"
+          "text": "提出时间冲突"
         }
       ],
       "correctId": "comic-s1-07-choice-1",
-      "explanation": "在这段公告语境里，“收到”是在确认已看到安排。",
+      "explanation": "此处只要求确认阅读；“收到”回应这一要求，没有承诺参加。",
       "distractorNotes": {
-        "comic-s1-07-choice-2": "“更改安排”不符合题面条件。在这段公告语境里，“收到”是在确认已看到安排。",
-        "comic-s1-07-choice-3": "“介绍自己”不符合题面条件。在这段公告语境里，“收到”是在确认已看到安排。",
-        "comic-s1-07-choice-4": "“提出投票”不符合题面条件。在这段公告语境里，“收到”是在确认已看到安排。"
+        "comic-s1-07-choice-2": "确认看到安排不等于承诺参加。",
+        "comic-s1-07-choice-3": "回复没有提出新时间。",
+        "comic-s1-07-choice-4": "回复没有说明时间冲突。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "在这段公告语境里，“收到”是在确认已看到安排。",
+      "editReason": "保留确认阅读考点，把无关干扰项改为易混淆的群聊意图。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "此处只要求确认阅读；“收到”回应这一要求，没有承诺参加。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
@@ -277,6 +298,8 @@
       "stage": 0,
       "domain": "life",
       "cognition": "common",
+      "difficulty": 1,
+      "difficultyRationale": "一次毫升到升换算，熟悉数量短题。",
       "prompt": "小满的水杯容量是 500 毫升。换成升是多少？",
       "options": [
         {
@@ -291,13 +314,14 @@
       "correctId": "comic-s1-08-choice-2",
       "explanation": "1000 毫升等于 1 升，所以 500 毫升是 0.5 升。",
       "distractorNotes": {
-        "comic-s1-08-choice-1": "“5 升”不符合题面条件。1000 毫升等于 1 升，所以 500 毫升是 0.5 升。"
+        "comic-s1-08-choice-1": "把500毫升换成5升，放大了十倍。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：容量指总容积，单位稳定，错误项反映小数位偏差。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "1000 毫升等于 1 升，所以 500 毫升是 0.5 升。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
@@ -309,6 +333,8 @@
       "stage": 0,
       "domain": "life",
       "cognition": "context",
+      "difficulty": 1,
+      "difficultyRationale": "按一人的领取总数匹配数量上限。",
       "prompt": "虚构活动写着“每人任选一件道具”。小满一个人怎么领才符合要求？",
       "options": [
         {
@@ -331,31 +357,34 @@
       "correctId": "comic-s1-09-choice-4",
       "explanation": "“每人任选一件”允许选择种类，但小满一个人的领取总数是一件。",
       "distractorNotes": {
-        "comic-s1-09-choice-1": "“每种道具都拿一件”不符合题面条件。“每人任选一件”允许选择种类，但小满一个人的领取总数是一件。",
-        "comic-s1-09-choice-2": "“先拿两件再说”不符合题面条件。“每人任选一件”允许选择种类，但小满一个人的领取总数是一件。",
-        "comic-s1-09-choice-3": "“拿三件备用”不符合题面条件。“每人任选一件”允许选择种类，但小满一个人的领取总数是一件。"
+        "comic-s1-09-choice-1": "把一件总数误解成每种一件。",
+        "comic-s1-09-choice-2": "两件超过一人一件的领取数。",
+        "comic-s1-09-choice-3": "三件备用也超过领取数。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：每人一件指总数，不会被解释为每类各一件。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "“每人任选一件”允许选择种类，但小满一个人的领取总数是一件。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s1-10",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s1-10-fact",
       "stage": 0,
       "domain": "language",
       "cognition": "internet",
-      "prompt": "小满连着改了三稿，说“我裂开了”，又解释只是夸张地说很烦。她在表达什么？",
+      "difficulty": 1,
+      "difficultyRationale": "从连续的烦恼线索辨别一句夸张表达。",
+      "prompt": "三稿都没通过，小满说“我裂开了”，随后叹气说还得重写。这句话更可能表达什么？",
       "options": [
         {
           "id": "comic-s1-10-choice-1",
-          "text": "衣服真的裂了"
+          "text": "宣布稿件已完成"
         },
         {
           "id": "comic-s1-10-choice-2",
@@ -363,26 +392,27 @@
         },
         {
           "id": "comic-s1-10-choice-3",
-          "text": "通知停电"
+          "text": "平静地确认收到"
         },
         {
           "id": "comic-s1-10-choice-4",
-          "text": "公布新规则"
+          "text": "庆祝修改顺利"
         }
       ],
       "correctId": "comic-s1-10-choice-2",
-      "explanation": "她已经说明是在夸张表达烦恼，不能按字面判定。",
+      "explanation": "三稿未通过、叹气和重写构成语境，支持夸张表达烦恼。",
       "distractorNotes": {
-        "comic-s1-10-choice-1": "“衣服真的裂了”不符合题面条件。她已经说明是在夸张表达烦恼，不能按字面判定。",
-        "comic-s1-10-choice-3": "“通知停电”不符合题面条件。她已经说明是在夸张表达烦恼，不能按字面判定。",
-        "comic-s1-10-choice-4": "“公布新规则”不符合题面条件。她已经说明是在夸张表达烦恼，不能按字面判定。"
+        "comic-s1-10-choice-1": "三稿未通过，不能当作已经完成。",
+        "comic-s1-10-choice-3": "叹气及重写的语境不支持平静确认。",
+        "comic-s1-10-choice-4": "未通过还要重写，不能解释成庆祝修改顺利。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "她已经说明是在夸张表达烦恼，不能按字面判定。",
+      "editReason": "去掉直接给出答案的补充解释；将投票替换为写作反馈语境中的情绪误判。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "三稿未通过、叹气和重写构成语境，支持夸张表达烦恼。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
@@ -393,6 +423,8 @@
       "stage": 0,
       "domain": "life",
       "cognition": "context",
+      "difficulty": 1,
+      "difficultyRationale": "跟踪一枚徽章的放入与取出，得到空状态。",
       "prompt": "小满的背包口袋是空的，装入一枚徽章后又取出这枚徽章。口袋里还剩徽章吗？",
       "options": [
         {
@@ -407,141 +439,153 @@
       "correctId": "comic-s1-11-choice-2",
       "explanation": "口袋原本为空，唯一装入的徽章也已取出，所以没有徽章。",
       "distractorNotes": {
-        "comic-s1-11-choice-1": "“还剩一枚”不符合题面条件。口袋原本为空，唯一装入的徽章也已取出，所以没有徽章。"
+        "comic-s1-11-choice-1": "忽略唯一徽章已经取出。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
+      "editReason": "保留：初始为空且同一徽章取出，信息完整，无额外物品假设。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
       "evidenceNote": "口袋原本为空，唯一装入的徽章也已取出，所以没有徽章。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-01",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-01-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构巴士每 5 分钟一班，08:00 有一班。小满 08:06 到站，下一班是几点？",
+      "difficulty": 2,
+      "difficultyRationale": "先找可乘班次，再加乘车时间，两步时间推算。",
+      "prompt": "巴士08:00起每5分钟一班，乘车需8分钟。小满08:06到站，上下一班后几点到终点？",
       "options": [
         {
           "id": "comic-s2-01-choice-1",
-          "text": "08:05"
+          "text": "08:13"
         },
         {
           "id": "comic-s2-01-choice-2",
-          "text": "08:06"
+          "text": "08:14"
         },
         {
           "id": "comic-s2-01-choice-3",
-          "text": "08:10"
+          "text": "08:18"
         },
         {
           "id": "comic-s2-01-choice-4",
-          "text": "08:15"
+          "text": "08:23"
         }
       ],
       "correctId": "comic-s2-01-choice-3",
-      "explanation": "班次为 08:00、08:05、08:10；08:06 后最近的是 08:10。",
+      "explanation": "08:06赶不上08:05，下一班08:10；再乘8分钟，到达08:18。",
       "distractorNotes": {
-        "comic-s2-01-choice-1": "“08:05”不符合题面条件。班次为 08:00、08:05、08:10；08:06 后最近的是 08:10。",
-        "comic-s2-01-choice-2": "“08:06”不符合题面条件。班次为 08:00、08:05、08:10；08:06 后最近的是 08:10。",
-        "comic-s2-01-choice-4": "“08:15”不符合题面条件。班次为 08:00、08:05、08:10；08:06 后最近的是 08:10。"
+        "comic-s2-01-choice-1": "误乘08:05的已发班次。",
+        "comic-s2-01-choice-2": "把到站08:06当作发车时间。",
+        "comic-s2-01-choice-4": "错过可乘的08:10，选了08:15。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "班次为 08:00、08:05、08:10；08:06 后最近的是 08:10。",
+      "editReason": "由只找下一班改为班次与到达时间联算。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "08:06赶不上08:05，下一班08:10；再乘8分钟，到达08:18。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-02",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-02-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "common",
-      "prompt": "地图上方标着北，且地图没有旋转。左侧对应哪个方向？",
+      "difficulty": 2,
+      "difficultyRationale": "把两个图面方向转换成实际方向并保留顺序。",
+      "prompt": "地图上方为北，未旋转。小满先向图左走，再向图上走；这两段方向依次是？",
       "options": [
         {
           "id": "comic-s2-02-choice-1",
-          "text": "东"
+          "text": "西→北"
         },
         {
           "id": "comic-s2-02-choice-2",
-          "text": "西"
+          "text": "北→西"
         }
       ],
-      "correctId": "comic-s2-02-choice-2",
-      "explanation": "按上北下南的地图方向，左侧是西。",
+      "correctId": "comic-s2-02-choice-1",
+      "explanation": "未旋转且上方为北，则左方为西；两段依次为西、北。",
       "distractorNotes": {
-        "comic-s2-02-choice-1": "“东”不符合题面条件。按上北下南的地图方向，左侧是西。"
+        "comic-s2-02-choice-2": "两段方向顺序颠倒。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "按上北下南的地图方向，左侧是西。",
+      "editReason": "由单方向识记改为方向与行走顺序的结合。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "未旋转且上方为北，则左方为西；两段依次为西、北。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-03",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-03-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构场馆标牌写着“东门入口，西门出口”。小满第一次入场应找哪扇门？",
+      "difficulty": 2,
+      "difficultyRationale": "结合门的用途与开放时刻筛选动作。",
+      "prompt": "场馆东门入口、西门出口；东门09:00开放，西门08:00开放。小满08:50首次入场应怎样？",
       "options": [
         {
           "id": "comic-s2-03-choice-1",
-          "text": "西门"
+          "text": "从西门入场"
         },
         {
           "id": "comic-s2-03-choice-2",
-          "text": "南门"
+          "text": "立刻从东门入场"
         },
         {
           "id": "comic-s2-03-choice-3",
-          "text": "北门"
+          "text": "等到09:00从西门入场"
         },
         {
           "id": "comic-s2-03-choice-4",
-          "text": "东门"
+          "text": "等到09:00从东门入场"
         }
       ],
       "correctId": "comic-s2-03-choice-4",
-      "explanation": "标牌把入口设在东门；出口与入口不是同一用途。",
+      "explanation": "首次入场需东门，08:50尚未开放；应等到09:00走东门。",
       "distractorNotes": {
-        "comic-s2-03-choice-1": "“西门”不符合题面条件。标牌把入口设在东门；出口与入口不是同一用途。",
-        "comic-s2-03-choice-2": "“南门”不符合题面条件。标牌把入口设在东门；出口与入口不是同一用途。",
-        "comic-s2-03-choice-3": "“北门”不符合题面条件。标牌把入口设在东门；出口与入口不是同一用途。"
+        "comic-s2-03-choice-1": "西门虽已开放，却仅作出口。",
+        "comic-s2-03-choice-2": "门选对了，但开放时间未到。",
+        "comic-s2-03-choice-3": "时间合适，但仍选了出口。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "标牌把入口设在东门；出口与入口不是同一用途。",
+      "editReason": "增加时间条件，避免只复制“东门入口”。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "首次入场需东门，08:50尚未开放；应等到09:00走东门。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-04",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-04-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "两条虚构路线：甲需步行 12 分钟加候车 3 分钟；乙需步行 8 分钟加候车 10 分钟。哪条总时间短？",
+      "difficulty": 2,
+      "difficultyRationale": "先计算两条总用时，再与可用时间比较。",
+      "prompt": "甲路线步行12分钟、候车3分钟；乙步行8分钟、候车10分钟。小满最多花16分钟，选哪条？",
       "options": [
         {
           "id": "comic-s2-04-choice-1",
@@ -553,259 +597,280 @@
         }
       ],
       "correctId": "comic-s2-04-choice-1",
-      "explanation": "甲共 15 分钟，乙共 18 分钟；要比较两段时间的总和。",
+      "explanation": "甲共15分钟不超过16；乙共18分钟超过16，只能选甲。",
       "distractorNotes": {
-        "comic-s2-04-choice-2": "“乙路线”不符合题面条件。甲共 15 分钟，乙共 18 分钟；要比较两段时间的总和。"
+        "comic-s2-04-choice-2": "乙步行虽短，但总用时18分钟超过上限。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "甲共 15 分钟，乙共 18 分钟；要比较两段时间的总和。",
+      "editReason": "保留合计用时考点，加入上限，防止只比较步行段。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲共15分钟不超过16；乙共18分钟超过16，只能选甲。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-05",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-05-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "common",
-      "prompt": "小满看到一块冰逐渐融化成水。这里从固态变成了哪种状态？",
+      "difficulty": 2,
+      "difficultyRationale": "对应两个相反变化，比较最终状态。",
+      "prompt": "冰融化变液态，水结冰变固态。甲杯冰融化，乙杯水结冰；两杯最终状态依次是？",
       "options": [
         {
           "id": "comic-s2-05-choice-1",
-          "text": "气态"
+          "text": "固态→液态"
         },
         {
           "id": "comic-s2-05-choice-2",
-          "text": "液态"
+          "text": "液态→固态"
         }
       ],
       "correctId": "comic-s2-05-choice-2",
-      "explanation": "融化后的水是液态；融化和汽化是不同变化。",
+      "explanation": "甲经历融化后是液态；乙结冰后是固态，依次为液态、固态。",
       "distractorNotes": {
-        "comic-s2-05-choice-1": "“气态”不符合题面条件。融化后的水是液态；融化和汽化是不同变化。"
+        "comic-s2-05-choice-1": "把两杯的最终状态颠倒：甲已融化，乙已结冰。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "融化后的水是液态；融化和汽化是不同变化。",
+      "editReason": "保留物态变化考点，增加反向变化作对照。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲经历融化后是液态；乙结冰后是固态，依次为液态、固态。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-06",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-06-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构盆栽记录：周一浇了 10 毫升，周二浇了 15 毫升。两天记录合计多少？",
+      "difficulty": 2,
+      "difficultyRationale": "先合计再求差，区分已完成量和剩余量。",
+      "prompt": "盆栽周一浇10毫升，周二浇15毫升；计划两天共30毫升，还差多少？",
       "options": [
         {
           "id": "comic-s2-06-choice-1",
-          "text": "5 毫升"
+          "text": "5毫升"
         },
         {
           "id": "comic-s2-06-choice-2",
-          "text": "15 毫升"
+          "text": "15毫升"
         },
         {
           "id": "comic-s2-06-choice-3",
-          "text": "25 毫升"
+          "text": "25毫升"
         },
         {
           "id": "comic-s2-06-choice-4",
-          "text": "150 毫升"
+          "text": "30毫升"
         }
       ],
-      "correctId": "comic-s2-06-choice-3",
-      "explanation": "把两天记录相加：10＋15＝25 毫升。",
+      "correctId": "comic-s2-06-choice-1",
+      "explanation": "已浇10＋15＝25毫升；计划30毫升，尚差30－25＝5毫升。",
       "distractorNotes": {
-        "comic-s2-06-choice-1": "“5 毫升”不符合题面条件。把两天记录相加：10＋15＝25 毫升。",
-        "comic-s2-06-choice-2": "“15 毫升”不符合题面条件。把两天记录相加：10＋15＝25 毫升。",
-        "comic-s2-06-choice-4": "“150 毫升”不符合题面条件。把两天记录相加：10＋15＝25 毫升。"
+        "comic-s2-06-choice-2": "只看周二记录，未合计与求差。",
+        "comic-s2-06-choice-3": "25毫升是已浇总量，不是缺口。",
+        "comic-s2-06-choice-4": "30毫升是目标量，不是还需量。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "把两天记录相加：10＋15＝25 毫升。",
+      "editReason": "加入目标量，把单步加法改为合计与缺口计算。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "已浇10＋15＝25毫升；计划30毫升，尚差30－25＝5毫升。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-07",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-07-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "台灯实验说明“挡住光的物体会形成阴影”。哪种操作最符合实验目的？",
+      "difficulty": 2,
+      "difficultyRationale": "同时检查光源与本子是否挡在光路中两个必要条件。",
+      "prompt": "实验规则：灯亮着且物体挡在光路中才观察阴影。小满哪项安排同时满足？",
       "options": [
         {
           "id": "comic-s2-07-choice-1",
-          "text": "关掉台灯"
+          "text": "关灯、本子放入光路"
         },
         {
           "id": "comic-s2-07-choice-2",
-          "text": "把本子放在光路中"
+          "text": "开灯、本子放入光路"
         },
         {
           "id": "comic-s2-07-choice-3",
-          "text": "移走所有物体"
+          "text": "开灯、本子移出光路"
         },
         {
           "id": "comic-s2-07-choice-4",
-          "text": "只打开聊天窗口"
+          "text": "关灯、本子移出光路"
         }
       ],
       "correctId": "comic-s2-07-choice-2",
-      "explanation": "把本子放进光路可以挡光；关灯则没有题面所需的光源。",
+      "explanation": "需要光源及挡光物同时存在；开灯并将本子放入光路才满足。",
       "distractorNotes": {
-        "comic-s2-07-choice-1": "“关掉台灯”不符合题面条件。把本子放进光路可以挡光；关灯则没有题面所需的光源。",
-        "comic-s2-07-choice-3": "“移走所有物体”不符合题面条件。把本子放进光路可以挡光；关灯则没有题面所需的光源。",
-        "comic-s2-07-choice-4": "“只打开聊天窗口”不符合题面条件。把本子放进光路可以挡光；关灯则没有题面所需的光源。"
+        "comic-s2-07-choice-1": "本子在光路中，但灯已关闭，没有光源。",
+        "comic-s2-07-choice-3": "灯亮着，但本子已移出光路，未挡光。",
+        "comic-s2-07-choice-4": "光源和光路中的挡光物两个条件都缺少。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "把本子放进光路可以挡光；关灯则没有题面所需的光源。",
+      "editReason": "将各选项的本子位置写明，避免“放入本子”未说明放在哪里的歧义。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "需要光源及挡光物同时存在；开灯并将本子放入光路才满足。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-08",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-08-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构天气卡标注“有可能下雨”，没有给出确定结论。能据此说“一定会下雨”吗？",
+      "difficulty": 2,
+      "difficultyRationale": "区分可能性、有限记录与确定断言。",
+      "prompt": "天气卡称“可能下雨”；一次模拟中10轮有6轮下雨。有人据此说本次一定下雨，证据够吗？",
       "options": [
         {
           "id": "comic-s2-08-choice-1",
-          "text": "能"
+          "text": "够"
         },
         {
           "id": "comic-s2-08-choice-2",
-          "text": "不能"
+          "text": "不够"
         }
       ],
       "correctId": "comic-s2-08-choice-2",
-      "explanation": "“有可能”没有排除不下雨，不能改写为“一定”。",
+      "explanation": "可能性及6次模拟结果均未保证本次必下雨，证据不够。",
       "distractorNotes": {
-        "comic-s2-08-choice-1": "“能”不符合题面条件。“有可能”没有排除不下雨，不能改写为“一定”。"
+        "comic-s2-08-choice-1": "把部分模拟结果扩大为本次必然结果。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "“有可能”没有排除不下雨，不能改写为“一定”。",
+      "editReason": "保留不确定性考点，增加看似支持断言的记录。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "可能性及6次模拟结果均未保证本次必下雨，证据不够。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-09",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-09-fact",
       "stage": 1,
       "domain": "language",
       "cognition": "context",
-      "prompt": "共享阅读角的说明是“交流请去门外”。小满要和朋友讨论，哪种做法符合说明？",
+      "difficulty": 2,
+      "difficultyRationale": "为两个目的各匹配允许地点，并保留先后次序。",
+      "prompt": "阅读角规定交流去门外，取书可进门。小满想先取书再讨论，哪项符合两条规则？",
       "options": [
         {
           "id": "comic-s2-09-choice-1",
-          "text": "在座位上喊"
+          "text": "在座位取书并讨论"
         },
         {
           "id": "comic-s2-09-choice-2",
-          "text": "去门外讨论"
+          "text": "进门取书，再去门外讨论"
         },
         {
           "id": "comic-s2-09-choice-3",
-          "text": "把说明遮住"
+          "text": "在门外取书，再进门讨论"
         },
         {
           "id": "comic-s2-09-choice-4",
-          "text": "请别人都离开"
+          "text": "进门讨论，再去门外取书"
         }
       ],
       "correctId": "comic-s2-09-choice-2",
-      "explanation": "说明指定门外为交流位置；无需让其他读者离开。",
+      "explanation": "取书可进门，但交流须去门外；依次进门取书、门外讨论。",
       "distractorNotes": {
-        "comic-s2-09-choice-1": "“在座位上喊”不符合题面条件。说明指定门外为交流位置；无需让其他读者离开。",
-        "comic-s2-09-choice-3": "“把说明遮住”不符合题面条件。说明指定门外为交流位置；无需让其他读者离开。",
-        "comic-s2-09-choice-4": "“请别人都离开”不符合题面条件。说明指定门外为交流位置；无需让其他读者离开。"
+        "comic-s2-09-choice-1": "取书地点允许，讨论地点违反规定。",
+        "comic-s2-09-choice-3": "交换了两个目的对应的位置。",
+        "comic-s2-09-choice-4": "讨论进门不允许，且未按先取书后讨论。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "说明指定门外为交流位置；无需让其他读者离开。",
+      "editReason": "从单地点匹配改为取书与讨论两项规则。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "取书可进门，但交流须去门外；依次进门取书、门外讨论。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-10",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-10-fact",
       "stage": 1,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构活动定位备注“仅供本次集合参考”。这条备注限定了什么？",
+      "difficulty": 2,
+      "difficultyRationale": "结合用途范围和确认状态，判断能否推广。",
+      "prompt": "集合定位只供本次参考，通知说最终地点在出发前确认。小满现在能断定以后都在此集合吗？",
       "options": [
         {
           "id": "comic-s2-10-choice-1",
-          "text": "参考用途是本次集合"
+          "text": "能断定"
         },
         {
           "id": "comic-s2-10-choice-2",
-          "text": "所有人都必须到场"
+          "text": "不能断定"
         },
         {
           "id": "comic-s2-10-choice-3",
-          "text": "定位永远不变"
+          "text": "只要保存定位就能断定"
         },
         {
           "id": "comic-s2-10-choice-4",
-          "text": "活动已经结束"
+          "text": "两人转发即可断定"
         }
       ],
-      "correctId": "comic-s2-10-choice-1",
-      "explanation": "备注说明用途和范围，没有宣布活动结束或强制到场。",
+      "correctId": "comic-s2-10-choice-2",
+      "explanation": "定位限本次参考，最终地点还待确认，更不能推及以后所有集合。",
       "distractorNotes": {
-        "comic-s2-10-choice-2": "“所有人都必须到场”不符合题面条件。备注说明用途和范围，没有宣布活动结束或强制到场。",
-        "comic-s2-10-choice-3": "“定位永远不变”不符合题面条件。备注说明用途和范围，没有宣布活动结束或强制到场。",
-        "comic-s2-10-choice-4": "“活动已经结束”不符合题面条件。备注说明用途和范围，没有宣布活动结束或强制到场。"
+        "comic-s2-10-choice-1": "本次参考不能证明未来地点。",
+        "comic-s2-10-choice-3": "保存副本不会扩大定位的适用范围。",
+        "comic-s2-10-choice-4": "转发次数不会确认最终地点或未来安排。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "备注说明用途和范围，没有宣布活动结束或强制到场。",
+      "editReason": "替换无关选项，区分保存、转发与证据更新。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "定位限本次参考，最终地点还待确认，更不能推及以后所有集合。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-11",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-11-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构站台只停顺时针环线，小满要坐逆时针环线。当前站台符合她的方向要求吗？",
+      "difficulty": 2,
+      "difficultyRationale": "同时检查目的地与方向，排除只看终点的判断。",
+      "prompt": "站台只停顺时针车；小满要逆时针车且不换乘。顺时针车也到终点，这个站台符合她的要求吗？",
       "options": [
         {
           "id": "comic-s2-11-choice-1",
@@ -817,27 +882,30 @@
         }
       ],
       "correctId": "comic-s2-11-choice-2",
-      "explanation": "当前站台只停顺时针车，与小满要坐的逆时针方向不同。",
+      "explanation": "到同一终点仍不满足逆时针要求；本站没有符合条件的车。",
       "distractorNotes": {
-        "comic-s2-11-choice-1": "“符合”不符合题面条件。当前站台只停顺时针车，与小满要坐的逆时针方向不同。"
+        "comic-s2-11-choice-1": "只看终点，忽略了逆时针的明确要求。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "当前站台只停顺时针车，与小满要坐的逆时针方向不同。",
+      "editReason": "保留方向规则，加入同终点线索检验条件完整性。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "到同一终点仍不满足逆时针要求；本站没有符合条件的车。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-12",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-12-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "导览图的红线经过南入口和画廊，蓝线经过南入口和剧场。小满从南入口去画廊，应看哪条线？",
+      "difficulty": 2,
+      "difficultyRationale": "把目的地与时间上限联合筛选。",
+      "prompt": "红线连南入口与画廊，需12分钟；蓝线连南入口与剧场，需8分钟。小满去画廊且有15分钟，选哪项？",
       "options": [
         {
           "id": "comic-s2-12-choice-1",
@@ -849,207 +917,225 @@
         },
         {
           "id": "comic-s2-12-choice-3",
-          "text": "两线都不去画廊"
+          "text": "两线都超时"
         },
         {
           "id": "comic-s2-12-choice-4",
-          "text": "只看剧场标志"
+          "text": "蓝线更快所以能到画廊"
         }
       ],
       "correctId": "comic-s2-12-choice-1",
-      "explanation": "只有红线在题面中连接南入口与画廊。",
+      "explanation": "红线能到画廊且12≤15分钟；蓝线虽快，但去的是剧场。",
       "distractorNotes": {
-        "comic-s2-12-choice-2": "“蓝线”不符合题面条件。只有红线在题面中连接南入口与画廊。",
-        "comic-s2-12-choice-3": "“两线都不去画廊”不符合题面条件。只有红线在题面中连接南入口与画廊。",
-        "comic-s2-12-choice-4": "“只看剧场标志”不符合题面条件。只有红线在题面中连接南入口与画廊。"
+        "comic-s2-12-choice-2": "蓝线终点不符合画廊要求。",
+        "comic-s2-12-choice-3": "红线12分钟没有超过15分钟。",
+        "comic-s2-12-choice-4": "速度不能替代目的地条件。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "只有红线在题面中连接南入口与画廊。",
+      "editReason": "加入用时，替换不相关标志选项为路线判断错误。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "红线能到画廊且12≤15分钟；蓝线虽快，但去的是剧场。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-13",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-13-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构公园的北门临时关闭，其余三门开放。小满只想找开放入口，哪种做法符合现有信息？",
+      "difficulty": 2,
+      "difficultyRationale": "结合开放状态与进出用途。",
+      "prompt": "公园北门关闭；东门开放但只供出园，南门开放可入园。小满要入园，应找东门还是南门？",
       "options": [
         {
           "id": "comic-s2-13-choice-1",
-          "text": "坚持从北门进"
+          "text": "东门"
         },
         {
           "id": "comic-s2-13-choice-2",
-          "text": "改找东门等开放入口"
+          "text": "南门"
         }
       ],
       "correctId": "comic-s2-13-choice-2",
-      "explanation": "已知北门关闭、其他门开放，应选择开放的入口。",
+      "explanation": "入口必须开放且允许入园；东门只出不进，南门满足两项要求。",
       "distractorNotes": {
-        "comic-s2-13-choice-1": "“坚持从北门进”不符合题面条件。已知北门关闭、其他门开放，应选择开放的入口。"
+        "comic-s2-13-choice-1": "东门开放，但不允许入园。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "已知北门关闭、其他门开放，应选择开放的入口。",
+      "editReason": "纠正“开放就能入园”的过度推断，保留入口筛选考点。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "入口必须开放且允许入园；东门只出不进，南门满足两项要求。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-14",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-14-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "行李牌注明“在青桥站领取”。小满到另一站候车，能据此确定行李应在另一站领取吗？",
+      "difficulty": 2,
+      "difficultyRationale": "区别人的位置证据与行李领取地点证据。",
+      "prompt": "行李牌指定青桥站；群友说“小满人在白石站”，没提行李。两条信息能证明行李改在白石领取吗？",
       "options": [
         {
           "id": "comic-s2-14-choice-1",
-          "text": "能确定"
+          "text": "能证明"
         },
         {
           "id": "comic-s2-14-choice-2",
-          "text": "不能确定"
+          "text": "不能证明"
         }
       ],
       "correctId": "comic-s2-14-choice-2",
-      "explanation": "行李牌指定的是青桥站，没有把领取地点改到另一站。",
+      "explanation": "群友只说明人的位置，没有更改行李领取地点，仍不能证明。",
       "distractorNotes": {
-        "comic-s2-14-choice-1": "“能确定”不符合题面条件。行李牌指定的是青桥站，没有把领取地点改到另一站。"
+        "comic-s2-14-choice-1": "把人的当前位置当成行李领取地点变更。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "行李牌指定的是青桥站，没有把领取地点改到另一站。",
+      "editReason": "加入相关但不足的群友信息，要求判断证据针对对象。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "群友只说明人的位置，没有更改行李领取地点，仍不能证明。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-15",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-15-fact",
       "stage": 1,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构路牌的箭头指向人行天桥，文字写“步行通道”。要按牌子走，小满应选什么？",
+      "difficulty": 2,
+      "difficultyRationale": "把通行方式、开放时间与等待时长结合。",
+      "prompt": "路牌称天桥是步行通道；天桥09:00开放，车道禁止步行。小满08:55步行到此，怎样合规？",
       "options": [
         {
           "id": "comic-s2-15-choice-1",
-          "text": "人行天桥"
+          "text": "等5分钟走天桥"
         },
         {
           "id": "comic-s2-15-choice-2",
-          "text": "箭头反方向的车道"
+          "text": "立刻走天桥"
         },
         {
           "id": "comic-s2-15-choice-3",
-          "text": "任意车辆入口"
+          "text": "现在走车道"
         },
         {
           "id": "comic-s2-15-choice-4",
-          "text": "封闭仓库"
+          "text": "等5分钟走车道"
         }
       ],
       "correctId": "comic-s2-15-choice-1",
-      "explanation": "箭头与文字共同指定人行天桥作为这条步行通道。",
+      "explanation": "步行只能走天桥，08:55距09:00还需5分钟，应等待后通过。",
       "distractorNotes": {
-        "comic-s2-15-choice-2": "“箭头反方向的车道”不符合题面条件。箭头与文字共同指定人行天桥作为这条步行通道。",
-        "comic-s2-15-choice-3": "“任意车辆入口”不符合题面条件。箭头与文字共同指定人行天桥作为这条步行通道。",
-        "comic-s2-15-choice-4": "“封闭仓库”不符合题面条件。箭头与文字共同指定人行天桥作为这条步行通道。"
+        "comic-s2-15-choice-2": "通道合适，但尚未开放。",
+        "comic-s2-15-choice-3": "车道明确禁止步行。",
+        "comic-s2-15-choice-4": "等待不改变车道禁止步行的规定。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "箭头与文字共同指定人行天桥作为这条步行通道。",
+      "editReason": "去掉仓库等无关干扰，加入时间限制。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "步行只能走天桥，08:55距09:00还需5分钟，应等待后通过。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-16",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-16-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构试验用同样的杯子比较有盖和无盖的差别。除盖子外，哪种安排更符合只比较盖子的目的？",
+      "difficulty": 2,
+      "difficultyRationale": "找出控制之外仍变化的两个条件。",
+      "prompt": "实验只比较盖子；甲杯装100毫升温水，乙杯装200毫升冷水。只把两杯容量换相同，比较公平吗？",
       "options": [
         {
           "id": "comic-s2-16-choice-1",
-          "text": "同时换杯子大小"
+          "text": "公平"
         },
         {
           "id": "comic-s2-16-choice-2",
-          "text": "两杯条件尽量保持相同"
+          "text": "不公平"
         }
       ],
       "correctId": "comic-s2-16-choice-2",
-      "explanation": "只比较盖子的差别时，其他条件应尽量相同，避免混入别的变化。",
+      "explanation": "即使杯容量相同，水量和水温仍不同，不能只比较盖子差别。",
       "distractorNotes": {
-        "comic-s2-16-choice-1": "“同时换杯子大小”不符合题面条件。只比较盖子的差别时，其他条件应尽量相同，避免混入别的变化。"
+        "comic-s2-16-choice-1": "忽略了水量和水温仍不同，混入额外变量。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "只比较盖子的差别时，其他条件应尽量相同，避免混入别的变化。",
+      "editReason": "由选择原则改为审查具体实验安排。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "即使杯容量相同，水量和水温仍不同，不能只比较盖子差别。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-17",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-17-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "冰箱便签写“这盒是共享食物，那盒是小禾个人午餐”。小满只取共享食物，应选哪盒？",
+      "difficulty": 2,
+      "difficultyRationale": "联合检查归属与是否有可取食物。",
+      "prompt": "便签：甲盒共享，已取完；乙盒个人午餐；丙盒共享，仍有食物。小满只取现有共享食物，选哪盒？",
       "options": [
         {
           "id": "comic-s2-17-choice-1",
-          "text": "共享食物那盒"
+          "text": "甲盒"
         },
         {
           "id": "comic-s2-17-choice-2",
-          "text": "小禾个人午餐那盒"
+          "text": "丙盒"
         }
       ],
-      "correctId": "comic-s2-17-choice-1",
-      "explanation": "便签明确区分共享与个人，小满的条件只符合共享食物那盒。",
+      "correctId": "comic-s2-17-choice-2",
+      "explanation": "甲盒虽共享但已空；丙盒同时满足共享且有食物。",
       "distractorNotes": {
-        "comic-s2-17-choice-2": "“小禾个人午餐那盒”不符合题面条件。便签明确区分共享与个人，小满的条件只符合共享食物那盒。"
+        "comic-s2-17-choice-1": "只看共享标签，忽略甲盒已空。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "便签明确区分共享与个人，小满的条件只符合共享食物那盒。",
+      "editReason": "保留共享归属考点，加入库存，避免直接复制标签。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲盒虽共享但已空；丙盒同时满足共享且有食物。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-18",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-18-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "小满观察到窗边地面是湿的，但没看到原因。单凭这一点，能确定刚有人打翻水杯吗？",
+      "difficulty": 2,
+      "difficultyRationale": "审查两条现象能否支持唯一的因果解释。",
+      "prompt": "窗边地面湿，附近杯子已空；但没记录杯子原先有无水。这些现象能确定有人刚打翻杯子吗？",
       "options": [
         {
           "id": "comic-s2-18-choice-1",
@@ -1061,217 +1147,235 @@
         }
       ],
       "correctId": "comic-s2-18-choice-2",
-      "explanation": "地面湿只是现象，题面没有证据排除其他原因，不能确定是打翻水杯。",
+      "explanation": "空杯原先是否有水未知，现象没有排除其他湿地原因，不能确定。",
       "distractorNotes": {
-        "comic-s2-18-choice-1": "“能确定”不符合题面条件。地面湿只是现象，题面没有证据排除其他原因，不能确定是打翻水杯。"
+        "comic-s2-18-choice-1": "把相邻现象直接当成唯一原因，缺少原先有水及倾倒记录。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "地面湿只是现象，题面没有证据排除其他原因，不能确定是打翻水杯。",
+      "editReason": "加入空杯这一诱导线索，要求辨别证据缺口。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "空杯原先是否有水未知，现象没有排除其他湿地原因，不能确定。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-19",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-19-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构收纳盒外贴着“纸张”，盒内却放着积木。只看标签能保证里面确实都是纸张吗？",
+      "difficulty": 2,
+      "difficultyRationale": "比较标签与实际内容，按物品种类而非标签或装满程度筛选。",
+      "prompt": "收纳只选盒内物品全是纸张的盒子。甲标签写纸张但内有积木；乙标签写杂物但内全是纸张。选谁？",
       "options": [
         {
           "id": "comic-s2-19-choice-1",
-          "text": "能保证"
+          "text": "甲盒"
         },
         {
           "id": "comic-s2-19-choice-2",
-          "text": "不能保证"
+          "text": "乙盒"
         }
       ],
       "correctId": "comic-s2-19-choice-2",
-      "explanation": "题面已给出标签与内容不一致，标签不能保证实际内容。",
+      "explanation": "条件只看物品种类，不看装得多满；乙内全是纸张，甲含积木，不合要求。",
       "distractorNotes": {
-        "comic-s2-19-choice-1": "“能保证”不符合题面条件。题面已给出标签与内容不一致，标签不能保证实际内容。"
+        "comic-s2-19-choice-1": "只看纸张标签，忽略甲盒实际含不符合要求的积木。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面已给出标签与内容不一致，标签不能保证实际内容。",
+      "editReason": "将“装满纸张”改成“盒内物品全是纸张”，明确不考容量或装满程度。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "条件只看物品种类，不看装得多满；乙内全是纸张，甲含积木，不合要求。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s2-20",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s2-20-fact",
       "stage": 1,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构小实验先记录杯中水位，再放入石子，最后记录新水位。比较水位变化需要哪两次记录？",
+      "difficulty": 2,
+      "difficultyRationale": "辨认实验动作的前后证据，排除后续恢复记录。",
+      "prompt": "同杯水位：放石子前20、放后28、取出后20（单位相同）。判断放入造成的升高应比较哪两项？",
       "options": [
         {
           "id": "comic-s2-20-choice-1",
-          "text": "放入前与放入后的记录"
+          "text": "放前20与放后28"
         },
         {
           "id": "comic-s2-20-choice-2",
-          "text": "只看石子的颜色"
+          "text": "放前20与取出后20"
         },
         {
           "id": "comic-s2-20-choice-3",
-          "text": "只看空白表格"
+          "text": "只看放后28"
         },
         {
           "id": "comic-s2-20-choice-4",
-          "text": "只看杯子名称"
+          "text": "把三项相加"
         }
       ],
       "correctId": "comic-s2-20-choice-1",
-      "explanation": "比较变化必须有放入前和放入后的水位记录。",
+      "explanation": "升高须比较放入前后，28－20＝8；取出后记录对应另一动作。",
       "distractorNotes": {
-        "comic-s2-20-choice-2": "“只看石子的颜色”不符合题面条件。比较变化必须有放入前和放入后的水位记录。",
-        "comic-s2-20-choice-3": "“只看空白表格”不符合题面条件。比较变化必须有放入前和放入后的水位记录。",
-        "comic-s2-20-choice-4": "“只看杯子名称”不符合题面条件。比较变化必须有放入前和放入后的水位记录。"
+        "comic-s2-20-choice-2": "这两项跨过了放入及取出两个动作，不能代表放入后的升高。",
+        "comic-s2-20-choice-3": "单个数值没有基线，不能判断升高。",
+        "comic-s2-20-choice-4": "相加水位记录不是变化量。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "比较变化必须有放入前和放入后的水位记录。",
+      "editReason": "增加第三次观测，干扰项均针对记录选择错误。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "升高须比较放入前后，28－20＝8；取出后记录对应另一动作。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-01",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-01-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "internet",
-      "prompt": "虚构群聊把“潜水”解释为看消息却很少发言。小满一直阅读、不发言，被形容为什么？",
+      "difficulty": 2,
+      "difficultyRationale": "同时检查阅读持续时间与发言情况。",
+      "prompt": "群规称“潜水”是连续两天读消息但不发言。甲两天都读、第二天发了一条；乙两天都读且未发言。谁符合？",
       "options": [
         {
           "id": "comic-s3-01-choice-1",
-          "text": "刷屏"
+          "text": "甲"
         },
         {
           "id": "comic-s3-01-choice-2",
-          "text": "潜水"
+          "text": "乙"
         },
         {
           "id": "comic-s3-01-choice-3",
-          "text": "置顶"
+          "text": "甲乙都符合"
         },
         {
           "id": "comic-s3-01-choice-4",
-          "text": "改名"
+          "text": "甲乙都不符合"
         }
       ],
       "correctId": "comic-s3-01-choice-2",
-      "explanation": "题面已经给出本群的用法：看消息、少发言叫“潜水”。",
+      "explanation": "乙两天都阅读且不发言；甲第二天发言，不满足群规全部条件。",
       "distractorNotes": {
-        "comic-s3-01-choice-1": "“刷屏”不符合题面条件。题面已经给出本群的用法：看消息、少发言叫“潜水”。",
-        "comic-s3-01-choice-3": "“置顶”不符合题面条件。题面已经给出本群的用法：看消息、少发言叫“潜水”。",
-        "comic-s3-01-choice-4": "“改名”不符合题面条件。题面已经给出本群的用法：看消息、少发言叫“潜水”。"
+        "comic-s3-01-choice-1": "甲第二天发言，违反“不发言”。",
+        "comic-s3-01-choice-3": "甲不符合，不能说两人都符合。",
+        "comic-s3-01-choice-4": "乙的两条记录均满足条件。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面已经给出本群的用法：看消息、少发言叫“潜水”。",
+      "editReason": "由术语答案直接复述改为两个人的行为记录匹配。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "乙两天都阅读且不发言；甲第二天发言，不满足群规全部条件。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-02",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-02-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "internet",
-      "prompt": "小满留言“蹲个后续”，又说想等作者更新结尾。她这次想做什么？",
+      "difficulty": 2,
+      "difficultyRationale": "结合等待内容与作者身份两个条件。",
+      "prompt": "群内“蹲后续”指等同一作者续篇。甲想看原作者第二篇；乙只想看别人改写版。谁的目的符合？",
       "options": [
         {
           "id": "comic-s3-02-choice-1",
-          "text": "催大家改名"
+          "text": "乙"
         },
         {
           "id": "comic-s3-02-choice-2",
-          "text": "等待后续内容"
+          "text": "甲"
         },
         {
           "id": "comic-s3-02-choice-3",
-          "text": "退出聊天"
+          "text": "甲乙都符合"
         },
         {
           "id": "comic-s3-02-choice-4",
-          "text": "删除原文"
+          "text": "甲乙都不符合"
         }
       ],
       "correctId": "comic-s3-02-choice-2",
-      "explanation": "“想等作者更新结尾”说明她在等待后续内容。",
+      "explanation": "群内用法同时限定等待续篇及同一作者，只有甲的目的符合。",
       "distractorNotes": {
-        "comic-s3-02-choice-1": "“催大家改名”不符合题面条件。“想等作者更新结尾”说明她在等待后续内容。",
-        "comic-s3-02-choice-3": "“退出聊天”不符合题面条件。“想等作者更新结尾”说明她在等待后续内容。",
-        "comic-s3-02-choice-4": "“删除原文”不符合题面条件。“想等作者更新结尾”说明她在等待后续内容。"
+        "comic-s3-02-choice-1": "乙等待别人改写，不是同一作者续篇。",
+        "comic-s3-02-choice-3": "乙的作者身份不满足条件。",
+        "comic-s3-02-choice-4": "甲明确等待原作者第二篇。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "“想等作者更新结尾”说明她在等待后续内容。",
+      "editReason": "局部定义自给自足，用近似阅读目的代替无关操作。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "群内用法同时限定等待续篇及同一作者，只有甲的目的符合。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-03",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-03-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构通知原文写“周六开放”，转发配文却写“周五开放”。两条文字是否一致？",
+      "difficulty": 3,
+      "difficultyRationale": "逐项核对日期与资格，再判断对具体读者的影响。",
+      "prompt": "原通知：周六开放，仅已登记者可进。转发：周六开放，所有人可进。若未登记的小满按转发去，哪种判断成立？",
       "options": [
         {
           "id": "comic-s3-03-choice-1",
-          "text": "一致"
+          "text": "转发保留日期却扩大资格"
         },
         {
           "id": "comic-s3-03-choice-2",
-          "text": "不一致"
+          "text": "转发完全一致"
         }
       ],
-      "correctId": "comic-s3-03-choice-2",
-      "explanation": "周五与周六不是同一天；转发配文没有忠实保留原文。",
+      "correctId": "comic-s3-03-choice-1",
+      "explanation": "日期一致，但转发扩大了入场资格；原通知不保证未登记者可进。",
       "distractorNotes": {
-        "comic-s3-03-choice-1": "“一致”不符合题面条件。周五与周六不是同一天；转发配文没有忠实保留原文。"
+        "comic-s3-03-choice-2": "只核对日期，漏看转发扩大了入场资格。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "周五与周六不是同一天；转发配文没有忠实保留原文。",
+      "editReason": "由星期不一致改为局部一致掩盖条件改变。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "日期一致，但转发扩大了入场资格；原通知不保证未登记者可进。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-04",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-04-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "common",
-      "prompt": "一段视频原长 60 秒，以 1.5 倍速播放且没有停顿，播放用时是多少？",
+      "difficulty": 3,
+      "difficultyRationale": "先减已看段，再换算余段播放时间。",
+      "prompt": "视频共90秒，已看30秒；余下以1.5倍速不停顿播放。还需多少秒？",
       "options": [
         {
           "id": "comic-s3-04-choice-1",
@@ -1291,71 +1395,77 @@
         }
       ],
       "correctId": "comic-s3-04-choice-3",
-      "explanation": "播放时间是 60÷1.5＝40 秒。",
+      "explanation": "先剩90－30＝60秒原片，再除以1.5倍速，需40秒。",
       "distractorNotes": {
-        "comic-s3-04-choice-1": "“90 秒”不符合题面条件。播放时间是 60÷1.5＝40 秒。",
-        "comic-s3-04-choice-2": "“60 秒”不符合题面条件。播放时间是 60÷1.5＝40 秒。",
-        "comic-s3-04-choice-4": "“30 秒”不符合题面条件。播放时间是 60÷1.5＝40 秒。"
+        "comic-s3-04-choice-1": "用了总长，未减已看段且未换倍速。",
+        "comic-s3-04-choice-2": "60秒是剩余原片长度，未除以倍速。",
+        "comic-s3-04-choice-4": "误把已看30秒当成剩余播放时间。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "播放时间是 60÷1.5＝40 秒。",
+      "editReason": "保留倍速考点，加已看进度，避免套总长公式。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "先剩90－30＝60秒原片，再除以1.5倍速，需40秒。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-05",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-05-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "internet",
-      "prompt": "小满说“给这段表演打 call”，并补充“我是说支持它”。这里是在做什么？",
+      "difficulty": 2,
+      "difficultyRationale": "用已给定词义判断两组行为，而非摘抄补充解释。",
+      "prompt": "本群“打call”指支持表演，不是电话操作。甲点赞并说愿再看；乙只问联系电话。哪位行为更符合？",
       "options": [
         {
           "id": "comic-s3-05-choice-1",
-          "text": "拨打电话"
+          "text": "乙"
         },
         {
           "id": "comic-s3-05-choice-2",
-          "text": "表示支持"
+          "text": "甲"
         },
         {
           "id": "comic-s3-05-choice-3",
-          "text": "修改文件"
+          "text": "两人都符合"
         },
         {
           "id": "comic-s3-05-choice-4",
-          "text": "关掉声音"
+          "text": "两人都不符合"
         }
       ],
       "correctId": "comic-s3-05-choice-2",
-      "explanation": "她明确补充了“支持它”，这里不表示拨打电话。",
+      "explanation": "甲的点赞和愿再看表达支持；乙只询问联系方式，不体现支持表演。",
       "distractorNotes": {
-        "comic-s3-05-choice-1": "“拨打电话”不符合题面条件。她明确补充了“支持它”，这里不表示拨打电话。",
-        "comic-s3-05-choice-3": "“修改文件”不符合题面条件。她明确补充了“支持它”，这里不表示拨打电话。",
-        "comic-s3-05-choice-4": "“关掉声音”不符合题面条件。她明确补充了“支持它”，这里不表示拨打电话。"
+        "comic-s3-05-choice-1": "询问联系电话不能单独证明支持表演。",
+        "comic-s3-05-choice-3": "乙的电话询问不符合本群的支持用法。",
+        "comic-s3-05-choice-4": "甲的两项行为体现支持。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "她明确补充了“支持它”，这里不表示拨打电话。",
+      "editReason": "明确群内定义，消除外部网络用语知识依赖，替换无关干扰。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲的点赞和愿再看表达支持；乙只询问联系方式，不体现支持表演。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-06",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-06-fact",
       "stage": 2,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构棋盘只允许上下左右移动一格，禁止斜走。哪步合法？",
+      "difficulty": 3,
+      "difficultyRationale": "检查方向、步长及与目标距离三个条件。",
+      "prompt": "棋盘每步只上下左右一格，不许斜走；小满下一步须接近右方两格处的旗子。哪步合法且缩短距离？",
       "options": [
         {
           "id": "comic-s3-06-choice-1",
@@ -1367,439 +1477,475 @@
         },
         {
           "id": "comic-s3-06-choice-3",
-          "text": "跳过两格"
+          "text": "向右跳两格"
         },
         {
           "id": "comic-s3-06-choice-4",
-          "text": "一次绕一圈"
+          "text": "向左走一格"
         }
       ],
       "correctId": "comic-s3-06-choice-2",
-      "explanation": "向右一格满足方向和步数限制，其他选项违反至少一项。",
+      "explanation": "向右一格合法，且距右方旗子由两格变一格；其余不合法或变远。",
       "distractorNotes": {
-        "comic-s3-06-choice-1": "“右上斜走一格”不符合题面条件。向右一格满足方向和步数限制，其他选项违反至少一项。",
-        "comic-s3-06-choice-3": "“跳过两格”不符合题面条件。向右一格满足方向和步数限制，其他选项违反至少一项。",
-        "comic-s3-06-choice-4": "“一次绕一圈”不符合题面条件。向右一格满足方向和步数限制，其他选项违反至少一项。"
+        "comic-s3-06-choice-1": "斜走违反方向规则。",
+        "comic-s3-06-choice-3": "跳两格违反每步一格的限制。",
+        "comic-s3-06-choice-4": "向左合法，但距右方旗子更远。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "向右一格满足方向和步数限制，其他选项违反至少一项。",
+      "editReason": "保留棋盘移动规则，加入目标距离及合法但背离目标的干扰项。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "向右一格合法，且距右方旗子由两格变一格；其余不合法或变远。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-07",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-07-fact",
       "stage": 2,
       "domain": "sports",
       "cognition": "context",
-      "prompt": "虚构友谊赛规定“先赢两小局获胜”。小满队已经连赢两局，需要第三局才能获胜吗？",
+      "difficulty": 3,
+      "difficultyRationale": "从不同结果累计有效胜局，再判断阈值。",
+      "prompt": "赛制先赢两局获胜，平局不计胜局。小满队先胜、再平、后负。接着再赢一局，是否立即获胜？",
       "options": [
         {
           "id": "comic-s3-07-choice-1",
-          "text": "需要"
+          "text": "是"
         },
         {
           "id": "comic-s3-07-choice-2",
-          "text": "不需要"
+          "text": "否"
         }
       ],
-      "correctId": "comic-s3-07-choice-2",
-      "explanation": "先赢两局已经达到题面规则，不必再打一局来判定胜出。",
+      "correctId": "comic-s3-07-choice-1",
+      "explanation": "前三局累计一胜；再赢后累计两胜，达到规则，平局与负局不抵消胜局。",
       "distractorNotes": {
-        "comic-s3-07-choice-1": "“需要”不符合题面条件。先赢两局已经达到题面规则，不必再打一局来判定胜出。"
+        "comic-s3-07-choice-2": "忽略此前的一胜，或把平局和负局误作扣除胜局。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "先赢两局已经达到题面规则，不必再打一局来判定胜出。",
+      "editReason": "保留先赢两局规则，去掉“连赢两局”的直接答案线索。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "前三局累计一胜；再赢后累计两胜，达到规则，平局与负局不抵消胜局。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-08",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-08-fact",
       "stage": 2,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构游戏将角色可携带物品数从 6 改成 8，其余不变。直接增加的是哪项能力？",
+      "difficulty": 3,
+      "difficultyRationale": "合计所需容量，再分别比较旧上限和新上限。",
+      "prompt": "游戏背包容量由6改8，现有5件不可丢弃；还要装2件新物品。只按容量，改动前后哪项正确？",
       "options": [
         {
           "id": "comic-s3-08-choice-1",
-          "text": "攻击范围"
+          "text": "前后都装得下"
         },
         {
           "id": "comic-s3-08-choice-2",
-          "text": "背包容量"
+          "text": "改后能装，改前不能"
         },
         {
           "id": "comic-s3-08-choice-3",
-          "text": "跑步速度"
+          "text": "改前能装，改后不能"
         },
         {
           "id": "comic-s3-08-choice-4",
-          "text": "技能伤害"
+          "text": "前后都装不下"
         }
       ],
       "correctId": "comic-s3-08-choice-2",
-      "explanation": "修改的是可携带物品数量，只能直接推出背包容量变大。",
+      "explanation": "现有5加新2共7件；7大于6且不大于8，只有改后装得下。",
       "distractorNotes": {
-        "comic-s3-08-choice-1": "“攻击范围”不符合题面条件。修改的是可携带物品数量，只能直接推出背包容量变大。",
-        "comic-s3-08-choice-3": "“跑步速度”不符合题面条件。修改的是可携带物品数量，只能直接推出背包容量变大。",
-        "comic-s3-08-choice-4": "“技能伤害”不符合题面条件。修改的是可携带物品数量，只能直接推出背包容量变大。"
+        "comic-s3-08-choice-1": "改前上限6小于所需7。",
+        "comic-s3-08-choice-3": "较小上限不能装下，而较大上限能装下。",
+        "comic-s3-08-choice-4": "改后上限8足够装7件。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "修改的是可携带物品数量，只能直接推出背包容量变大。",
+      "editReason": "保留携带数量规则，加入现有量及新增量，防止只认背包一词。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "现有5加新2共7件；7大于6且不大于8，只有改后装得下。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-09",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-09-fact",
       "stage": 2,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构条漫注明“按从上到下阅读”。上、中、下三格的顺序是哪种？",
+      "difficulty": 2,
+      "difficultyRationale": "把阅读方向映射为事件时间，再判断前后关系。",
+      "prompt": "条漫按上到下读；上格钥匙丢失，中格找到钥匙，下格打开柜子。哪项同时符合顺序和因果？",
       "options": [
         {
           "id": "comic-s3-09-choice-1",
-          "text": "下→中→上"
+          "text": "先开柜，再丢钥匙"
         },
         {
           "id": "comic-s3-09-choice-2",
-          "text": "中→上→下"
+          "text": "找到钥匙后才开柜"
         },
         {
           "id": "comic-s3-09-choice-3",
-          "text": "上→下→中"
+          "text": "丢钥匙前已开柜"
         },
         {
           "id": "comic-s3-09-choice-4",
-          "text": "上→中→下"
+          "text": "打开柜子后才找到钥匙"
         }
       ],
-      "correctId": "comic-s3-09-choice-4",
-      "explanation": "题面指定从上到下，因此依次读上格、中格、下格。",
+      "correctId": "comic-s3-09-choice-2",
+      "explanation": "从上到下是丢失、找到、开柜；因此找到钥匙在开柜之前。",
       "distractorNotes": {
-        "comic-s3-09-choice-1": "“下→中→上”不符合题面条件。题面指定从上到下，因此依次读上格、中格、下格。",
-        "comic-s3-09-choice-2": "“中→上→下”不符合题面条件。题面指定从上到下，因此依次读上格、中格、下格。",
-        "comic-s3-09-choice-3": "“上→下→中”不符合题面条件。题面指定从上到下，因此依次读上格、中格、下格。"
+        "comic-s3-09-choice-1": "开柜在最后，不在丢失之前。",
+        "comic-s3-09-choice-3": "题面顺序中开柜在丢失之后。",
+        "comic-s3-09-choice-4": "找到钥匙在中格，早于下格开柜。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面指定从上到下，因此依次读上格、中格、下格。",
+      "editReason": "保留阅读方向考点，要求从内容推出事件关系而非照抄方向。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "从上到下是丢失、找到、开柜；因此找到钥匙在开柜之前。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-10",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-10-fact",
       "stage": 2,
       "domain": "sports",
       "cognition": "common",
-      "prompt": "虚构桌游每组三人，现场共有七人。最多能组成几个完整三人组？",
+      "difficulty": 3,
+      "difficultyRationale": "先确定可分组人数，再作整组除法。",
+      "prompt": "桌游需每组三人。11人中2人当裁判不参组；其余最多组成几个完整组？",
       "options": [
         {
           "id": "comic-s3-10-choice-1",
-          "text": "1 组"
-        },
-        {
-          "id": "comic-s3-10-choice-2",
           "text": "2 组"
         },
         {
-          "id": "comic-s3-10-choice-3",
+          "id": "comic-s3-10-choice-2",
           "text": "3 组"
         },
         {
+          "id": "comic-s3-10-choice-3",
+          "text": "4 组"
+        },
+        {
           "id": "comic-s3-10-choice-4",
-          "text": "7 组"
+          "text": "9 组"
         }
       ],
       "correctId": "comic-s3-10-choice-2",
-      "explanation": "七人可分成两个三人组，还剩一人，不能组成第三个完整组。",
+      "explanation": "先扣除两位裁判，11－2＝9人；再按每组3人，9÷3＝3组。",
       "distractorNotes": {
-        "comic-s3-10-choice-1": "“1 组”不符合题面条件。七人可分成两个三人组，还剩一人，不能组成第三个完整组。",
-        "comic-s3-10-choice-3": "“3 组”不符合题面条件。七人可分成两个三人组，还剩一人，不能组成第三个完整组。",
-        "comic-s3-10-choice-4": "“7 组”不符合题面条件。七人可分成两个三人组，还剩一人，不能组成第三个完整组。"
+        "comic-s3-10-choice-1": "少算一组，9人能正好组成三组。",
+        "comic-s3-10-choice-3": "四组三人需12人，超过参组人数。",
+        "comic-s3-10-choice-4": "9是参组人数，不是三人组数。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "七人可分成两个三人组，还剩一人，不能组成第三个完整组。",
+      "editReason": "保留完整分组考点，加不参组角色及超额分组干扰。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "先扣除两位裁判，11－2＝9人；再按每组3人，9÷3＝3组。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-11",
-      "revision": 1,
-      "factCluster": "comic-s3-11-fact",
+      "revision": 2,
+      "factCluster": "digital.vote.registration-unused",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构投票页标注“仅可单选”。小满想提交一个有效选项，哪种操作符合这条规则？",
+      "difficulty": 2,
+      "difficultyRationale": "两个资格条件分别核对两个人，再保留唯一合格者。",
+      "prompt": "投票只选一位：须完成报名且未投过。小满已报名并投过；小禾已报名未投过。该选谁？",
       "options": [
         {
           "id": "comic-s3-11-choice-1",
-          "text": "同时勾选两个"
+          "text": "小满"
         },
         {
           "id": "comic-s3-11-choice-2",
-          "text": "只勾选一个"
+          "text": "小禾"
         }
       ],
       "correctId": "comic-s3-11-choice-2",
-      "explanation": "单选只允许一个选项；同时勾选两个违反题面规则。",
+      "explanation": "小满已投过而被排除；小禾已报名且未投过，满足全部条件。",
       "distractorNotes": {
-        "comic-s3-11-choice-1": "“同时勾选两个”不符合题面条件。单选只允许一个选项；同时勾选两个违反题面规则。"
+        "comic-s3-11-choice-1": "只看报名，漏查已经投过这一排除条件。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "单选只允许一个选项；同时勾选两个违反题面规则。",
+      "editReason": "将单选定义复述改为单选约束下的资格筛选。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "小满已投过而被排除；小禾已报名且未投过，满足全部条件。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-12",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-12-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构稿件把“我更喜欢雨天”标成作者观点。这句话主要表达什么？",
+      "difficulty": 3,
+      "difficultyRationale": "区分个人观点、调查多数与未知样本身份。",
+      "prompt": "稿件说“作者偏爱雨天”；调查10人中4人选雨天，6人选晴天。哪项能由这两条信息推出？",
       "options": [
         {
           "id": "comic-s3-12-choice-1",
-          "text": "所有人的统一结论"
+          "text": "全部人偏爱雨天"
         },
         {
           "id": "comic-s3-12-choice-2",
-          "text": "作者自己的偏好"
+          "text": "作者偏好不能代表调查多数"
         },
         {
           "id": "comic-s3-12-choice-3",
-          "text": "天气记录的数值"
+          "text": "作者必在这10人中"
         },
         {
           "id": "comic-s3-12-choice-4",
-          "text": "节目开放时间"
+          "text": "调查无人偏爱雨天"
         }
       ],
       "correctId": "comic-s3-12-choice-2",
-      "explanation": "“我更喜欢”表达作者个人偏好，不代表所有人的意见。",
+      "explanation": "作者个人偏好不等于多数；调查多数选晴天，也没有说明作者是否参与。",
       "distractorNotes": {
-        "comic-s3-12-choice-1": "“所有人的统一结论”不符合题面条件。“我更喜欢”表达作者个人偏好，不代表所有人的意见。",
-        "comic-s3-12-choice-3": "“天气记录的数值”不符合题面条件。“我更喜欢”表达作者个人偏好，不代表所有人的意见。",
-        "comic-s3-12-choice-4": "“节目开放时间”不符合题面条件。“我更喜欢”表达作者个人偏好，不代表所有人的意见。"
+        "comic-s3-12-choice-1": "调查中有6人选晴天，不能称全部偏爱雨天。",
+        "comic-s3-12-choice-3": "没有给出作者与样本的身份对应。",
+        "comic-s3-12-choice-4": "已有4人选雨天，不能说无人偏爱。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "“我更喜欢”表达作者个人偏好，不代表所有人的意见。",
+      "editReason": "保留观点与事实范围考点，增加量化证据作对照。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "作者个人偏好不等于多数；调查多数选晴天，也没有说明作者是否参与。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-13",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-13-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构图片说明写“这是一张示意图，比例不准确”。能直接按图上长度精确测量实物尺寸吗？",
+      "difficulty": 3,
+      "difficultyRationale": "处理图与文字冲突，结合比例限制及数值比较。",
+      "prompt": "示意图比例不准确：图上甲长于乙；文字实测甲4厘米、乙6厘米。判断实物谁更长及能否按图测量，选哪项？",
       "options": [
         {
           "id": "comic-s3-13-choice-1",
-          "text": "能"
+          "text": "甲更长，可以按图精确测量"
         },
         {
           "id": "comic-s3-13-choice-2",
-          "text": "不能"
+          "text": "乙更长，不能按图精确测量"
         }
       ],
       "correctId": "comic-s3-13-choice-2",
-      "explanation": "说明已指出比例不准确，图上长度不能直接当作精确的实物尺寸。",
+      "explanation": "实测6大于4，故乙长；示意图比例不准确，不能拿图长精确测量。",
       "distractorNotes": {
-        "comic-s3-13-choice-1": "“能”不符合题面条件。说明已指出比例不准确，图上长度不能直接当作精确的实物尺寸。"
+        "comic-s3-13-choice-1": "把比例不准确的图示当实测，并忽略6大于4。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "说明已指出比例不准确，图上长度不能直接当作精确的实物尺寸。",
+      "editReason": "保留示意图不能精确测量考点，加相反图示与实测数据。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "实测6大于4，故乙长；示意图比例不准确，不能拿图长精确测量。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-14",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-14-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "文件名是“会议纪要”，文件内容却是一份菜单。要判断文件实际内容，最直接该查看什么？",
+      "difficulty": 2,
+      "difficultyRationale": "核对两个文件的名称与内容，再匹配检索目的。",
+      "prompt": "甲文件名为纪要，正文是菜单；乙文件名为菜单，正文记录会议决定。要找本次会议决定，只按已知正文选谁？",
       "options": [
         {
           "id": "comic-s3-14-choice-1",
-          "text": "文件名就够了"
+          "text": "甲文件"
         },
         {
           "id": "comic-s3-14-choice-2",
-          "text": "文件里面的文字"
+          "text": "乙文件"
         }
       ],
       "correctId": "comic-s3-14-choice-2",
-      "explanation": "题面说明名称与内容不一致，查看正文才能知道实际内容。",
+      "explanation": "实际内容中只有乙记录会议决定；文件名与正文冲突时需按正文选择。",
       "distractorNotes": {
-        "comic-s3-14-choice-1": "“文件名就够了”不符合题面条件。题面说明名称与内容不一致，查看正文才能知道实际内容。"
+        "comic-s3-14-choice-1": "只看“纪要”名称，忽略其正文实际是菜单。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面说明名称与内容不一致，查看正文才能知道实际内容。",
+      "editReason": "保留名称不能代替内容考点，用两份反向标注文件增加比较。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "实际内容中只有乙记录会议决定；文件名与正文冲突时需按正文选择。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-15",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-15-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构通知写“图片仅作气氛展示，名单以文字为准”。判断小满是否在名单里，应先看什么？",
+      "difficulty": 3,
+      "difficultyRationale": "联合证据来源优先级与确认标记条件。",
+      "prompt": "通知规定名单以文字为准，名字后有✓才算已确认。图中有小满；文字有“小满”却无✓。她已确认了吗？",
       "options": [
         {
           "id": "comic-s3-15-choice-1",
-          "text": "图片里的所有人"
+          "text": "能确定已确认"
         },
         {
           "id": "comic-s3-15-choice-2",
-          "text": "通知中的文字名单"
+          "text": "不能确定已确认"
         }
       ],
       "correctId": "comic-s3-15-choice-2",
-      "explanation": "通知明确规定名单以文字为准，气氛图片不承担名单功能。",
+      "explanation": "先看文字而不是图片；文字中的名字没有✓，不满足已确认条件。",
       "distractorNotes": {
-        "comic-s3-15-choice-1": "“图片里的所有人”不符合题面条件。通知明确规定名单以文字为准，气氛图片不承担名单功能。"
+        "comic-s3-15-choice-1": "图片出现人物和文字出现名字都不能替代必需的确认标记。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "通知明确规定名单以文字为准，气氛图片不承担名单功能。",
+      "editReason": "保留文字名单优先考点，加确认状态，防止仅凭出现名字作答。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "先看文字而不是图片；文字中的名字没有✓，不满足已确认条件。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-16",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-16-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "帖子引用小禾的话，并把引文加上引号。引号里的话在这条帖子中被标为谁的话？",
+      "difficulty": 2,
+      "difficultyRationale": "匹配题面已给出的引语来源，并区分被引述者、引述者与转发评语，属于来源辨别。",
+      "prompt": "帖中小禾引用小舟：“周六可进。”小满转发此帖，加评语“我未核实”。只按题面话语归属，哪项准确？",
       "options": [
         {
           "id": "comic-s3-16-choice-1",
-          "text": "发帖者必定原创"
+          "text": "“周六可进”是小禾亲历结论"
         },
         {
           "id": "comic-s3-16-choice-2",
-          "text": "小禾的话"
+          "text": "“周六可进”被标为小舟的话"
         },
         {
           "id": "comic-s3-16-choice-3",
-          "text": "所有读者的话"
+          "text": "“我未核实”是小舟的话"
         },
         {
           "id": "comic-s3-16-choice-4",
-          "text": "平台自动通知"
+          "text": "转发表示小满保证消息属实"
         }
       ],
       "correctId": "comic-s3-16-choice-2",
-      "explanation": "题面明确说帖子引用小禾，引号把这段引文标示出来。",
+      "explanation": "沿小满转发、小禾引用的链条回溯，“周六可进”被标为小舟的话；转发不保证其真实。",
       "distractorNotes": {
-        "comic-s3-16-choice-1": "“发帖者必定原创”不符合题面条件。题面明确说帖子引用小禾，引号把这段引文标示出来。",
-        "comic-s3-16-choice-3": "“所有读者的话”不符合题面条件。题面明确说帖子引用小禾，引号把这段引文标示出来。",
-        "comic-s3-16-choice-4": "“平台自动通知”不符合题面条件。题面明确说帖子引用小禾，引号把这段引文标示出来。"
+        "comic-s3-16-choice-1": "小禾是引述者，题面未说他亲历或核实。",
+        "comic-s3-16-choice-3": "这是小满转发时新加的评语，不属于被引述者小舟。",
+        "comic-s3-16-choice-4": "小满明确表示未核实，转发也不能单独证明担保真实性。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面明确说帖子引用小禾，引号把这段引文标示出来。",
+      "editReason": "恢复原有引述归属考点，区别于登记条件完整性审查；来源由题面直接标明，难度诚实标为2级。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "沿小满转发、小禾引用的链条回溯，“周六可进”被标为小舟的话；转发不保证其真实。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-17",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-17-fact",
       "stage": 2,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构活动调查仅收集了甲班意见。报告想说明调查范围，哪种写法最准确？",
+      "difficulty": 3,
+      "difficultyRationale": "计算样本内比例，再审查总体推广是否越界。",
+      "prompt": "甲班20人中12人赞成，乙班未调查。报告称“甲班过半赞成，因此全校过半赞成”。哪个判断有证据？",
       "options": [
         {
           "id": "comic-s3-17-choice-1",
-          "text": "全校所有人都同意"
+          "text": "两句都有"
         },
         {
           "id": "comic-s3-17-choice-2",
-          "text": "结果来自本次甲班调查"
+          "text": "只有甲班过半有证据"
         }
       ],
       "correctId": "comic-s3-17-choice-2",
-      "explanation": "已知样本只有甲班，应明确这个范围，不能直接代表全校。",
+      "explanation": "12超过20的一半，支持甲班过半；未调查乙班，不能推出全校过半。",
       "distractorNotes": {
-        "comic-s3-17-choice-1": "“全校所有人都同意”不符合题面条件。已知样本只有甲班，应明确这个范围，不能直接代表全校。"
+        "comic-s3-17-choice-1": "把甲班样本的有效结论直接扩大到全校。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "已知样本只有甲班，应明确这个范围，不能直接代表全校。",
+      "editReason": "保留样本范围考点，加入样本内成立而总体无据的混合结论。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "12超过20的一半，支持甲班过半；未调查乙班，不能推出全校过半。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-18",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-18-fact",
       "stage": 2,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构故事里，角色先知道钥匙不见了，结尾才找到钥匙。说“角色开场就已找到钥匙”符合情节吗？",
+      "difficulty": 3,
+      "difficultyRationale": "辨别事件时序及两把钥匙身份，排除错误因果倒推。",
+      "prompt": "故事上午丢钥匙，中午借备用钥匙开柜，傍晚找到原钥匙。说“柜子是找到原钥匙后打开的”符合吗？",
       "options": [
         {
           "id": "comic-s3-18-choice-1",
@@ -1811,207 +1957,225 @@
         }
       ],
       "correctId": "comic-s3-18-choice-2",
-      "explanation": "找到钥匙发生在结尾，不是开场，不能颠倒情节顺序。",
+      "explanation": "开柜发生在中午，找到原钥匙在傍晚；且开柜用备用钥匙，不能倒推原钥匙已找到。",
       "distractorNotes": {
-        "comic-s3-18-choice-1": "“符合”不符合题面条件。找到钥匙发生在结尾，不是开场，不能颠倒情节顺序。"
+        "comic-s3-18-choice-1": "把备用钥匙与原钥匙混同，并倒置中午与傍晚。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "找到钥匙发生在结尾，不是开场，不能颠倒情节顺序。",
+      "editReason": "保留找到钥匙的时序考点，加备用钥匙防止凭常见因果猜答案。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "开柜发生在中午，找到原钥匙在傍晚；且开柜用备用钥匙，不能倒推原钥匙已找到。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-19",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-19-fact",
       "stage": 2,
       "domain": "sports",
       "cognition": "context",
-      "prompt": "虚构友谊赛规则是“平局不淘汰，双方进入下一轮”。两队打平后，按规则应该怎样？",
+      "difficulty": 3,
+      "difficultyRationale": "先用比赛结果规则，再应用资格例外。",
+      "prompt": "友谊赛平局双方晋级；但未交名单者暂停晋级。甲乙打平，甲已交名单，乙未交。按完整规则哪项成立？",
       "options": [
         {
           "id": "comic-s3-19-choice-1",
-          "text": "双方都进入下一轮"
+          "text": "甲晋级，乙暂停晋级"
         },
         {
           "id": "comic-s3-19-choice-2",
-          "text": "必须淘汰一队"
+          "text": "甲乙立即晋级"
         }
       ],
       "correctId": "comic-s3-19-choice-1",
-      "explanation": "题面的平局规则明确允许双方进入下一轮。",
+      "explanation": "平局先取得晋级资格，再检查名单条件；甲已交，乙未交故暂停。",
       "distractorNotes": {
-        "comic-s3-19-choice-2": "“必须淘汰一队”不符合题面条件。题面的平局规则明确允许双方进入下一轮。"
+        "comic-s3-19-choice-2": "只应用平局规则，漏掉未交名单须暂停的限制。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面的平局规则明确允许双方进入下一轮。",
+      "editReason": "保留平局不淘汰规则，增加名单前提，区分资格与立即执行。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "平局先取得晋级资格，再检查名单条件；甲已交，乙未交故暂停。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-20",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-20-fact",
       "stage": 2,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构游戏提示“这一回合只能交换位置，不能攻击”。小满选择攻击，是否符合本回合限制？",
+      "difficulty": 2,
+      "difficultyRationale": "分别检查动作许可与目标位置两个约束。",
+      "prompt": "游戏本回合只能交换位置、不能攻击；还要求交换后避开红格。甲想交换到红格，乙想攻击。谁的计划合规？",
       "options": [
         {
           "id": "comic-s3-20-choice-1",
-          "text": "符合"
+          "text": "甲"
         },
         {
           "id": "comic-s3-20-choice-2",
-          "text": "不符合"
+          "text": "两人都不合规"
         }
       ],
       "correctId": "comic-s3-20-choice-2",
-      "explanation": "本回合禁止攻击；能够交换位置不表示能够攻击。",
+      "explanation": "甲虽选交换，却违反避开红格；乙选择攻击，违反动作限制，所以都不合规。",
       "distractorNotes": {
-        "comic-s3-20-choice-1": "“符合”不符合题面条件。本回合禁止攻击；能够交换位置不表示能够攻击。"
+        "comic-s3-20-choice-1": "甲只满足动作类型，没有满足目标位置限制。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "本回合禁止攻击；能够交换位置不表示能够攻击。",
+      "editReason": "保留本回合交换且不攻击规则，增加位置条件及近似合规方案。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲虽选交换，却违反避开红格；乙选择攻击，违反动作限制，所以都不合规。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s3-21",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s3-21-fact",
       "stage": 2,
       "domain": "sports",
       "cognition": "context",
-      "prompt": "虚构接力规则要求“上一位交出标记后，下一位才出发”。标记尚未交出，下一位现在能出发吗？",
+      "difficulty": 2,
+      "difficultyRationale": "用两条必要条件审核互补但各不完整的记录。",
+      "prompt": "接力须交标记且收到接棒者确认才可出发。甲已交标记、未收到确认；乙未交标记却收到确认。谁可出发？",
       "options": [
         {
           "id": "comic-s3-21-choice-1",
-          "text": "能"
+          "text": "甲"
         },
         {
           "id": "comic-s3-21-choice-2",
-          "text": "不能"
+          "text": "两人都不可"
         }
       ],
       "correctId": "comic-s3-21-choice-2",
-      "explanation": "交出标记是下一位出发的前提，尚未满足时不能出发。",
+      "explanation": "甲缺确认，乙缺交标记；两项条件须同时满足，二人都不可出发。",
       "distractorNotes": {
-        "comic-s3-21-choice-1": "“能”不符合题面条件。交出标记是下一位出发的前提，尚未满足时不能出发。"
+        "comic-s3-21-choice-1": "甲只有交标记，尚缺接棒者确认。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "交出标记是下一位出发的前提，尚未满足时不能出发。",
+      "editReason": "保留交标记前提，增加确认条件，避免单条件机械判断。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "甲缺确认，乙缺交标记；两项条件须同时满足，二人都不可出发。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-01",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-01-fact",
       "stage": 3,
       "domain": "language",
       "cognition": "context",
-      "prompt": "虚构组装说明“先装 A，再接 B”。哪种顺序完全符合说明？",
+      "difficulty": 3,
+      "difficultyRationale": "分别核对先后关系与嵌入的检验前提。",
+      "prompt": "组装规则先A再B，接B前须检验A。日志甲：A→B→检验；乙：A→检验→B。哪项满足全部规则？",
       "options": [
         {
           "id": "comic-s4-01-choice-1",
-          "text": "先 B 后 A"
+          "text": "甲乙都满足"
         },
         {
           "id": "comic-s4-01-choice-2",
-          "text": "A 和 B 都不装"
+          "text": "只有甲满足"
         },
         {
           "id": "comic-s4-01-choice-3",
-          "text": "先 A 后 B"
+          "text": "只有乙满足"
         },
         {
           "id": "comic-s4-01-choice-4",
-          "text": "只接 B"
+          "text": "甲乙都不满足"
         }
       ],
       "correctId": "comic-s4-01-choice-3",
-      "explanation": "“先……再……”明确给出 A 在 B 前面的顺序。",
+      "explanation": "两者都先A后B，但甲检验太晚；乙在接B前已检验A，满足全部规则。",
       "distractorNotes": {
-        "comic-s4-01-choice-1": "“先 B 后 A”不符合题面条件。“先……再……”明确给出 A 在 B 前面的顺序。",
-        "comic-s4-01-choice-2": "“A 和 B 都不装”不符合题面条件。“先……再……”明确给出 A 在 B 前面的顺序。",
-        "comic-s4-01-choice-4": "“只接 B”不符合题面条件。“先……再……”明确给出 A 在 B 前面的顺序。"
+        "comic-s4-01-choice-1": "甲漏了接B前检验这一前提。",
+        "comic-s4-01-choice-2": "甲把检验放到接B之后。",
+        "comic-s4-01-choice-4": "乙满足先A、检验、再B的完整流程。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "“先……再……”明确给出 A 在 B 前面的顺序。",
+      "editReason": "由照抄A→B改为审查两份操作日志。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "两者都先A后B，但甲检验太晚；乙在接B前已检验A，满足全部规则。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-02",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-02-fact",
       "stage": 3,
       "domain": "life",
       "cognition": "common",
-      "prompt": "虚构饮品配方需要两杯水，每杯 200 毫升。两杯共多少毫升？",
+      "difficulty": 3,
+      "difficultyRationale": "先求配方总量，再扣除已备量。",
+      "prompt": "饮品需三杯水，每杯200毫升；已有150毫升，还需多少毫升？",
       "options": [
         {
           "id": "comic-s4-02-choice-1",
-          "text": "100 毫升"
+          "text": "150 毫升"
         },
         {
           "id": "comic-s4-02-choice-2",
-          "text": "200 毫升"
+          "text": "300 毫升"
         },
         {
           "id": "comic-s4-02-choice-3",
-          "text": "400 毫升"
+          "text": "450 毫升"
         },
         {
           "id": "comic-s4-02-choice-4",
-          "text": "2000 毫升"
+          "text": "600 毫升"
         }
       ],
       "correctId": "comic-s4-02-choice-3",
-      "explanation": "两杯各 200 毫升，合计 2×200＝400 毫升。",
+      "explanation": "目标为3×200＝600毫升；扣除已有150，还需450毫升。",
       "distractorNotes": {
-        "comic-s4-02-choice-1": "“100 毫升”不符合题面条件。两杯各 200 毫升，合计 2×200＝400 毫升。",
-        "comic-s4-02-choice-2": "“200 毫升”不符合题面条件。两杯各 200 毫升，合计 2×200＝400 毫升。",
-        "comic-s4-02-choice-4": "“2000 毫升”不符合题面条件。两杯各 200 毫升，合计 2×200＝400 毫升。"
+        "comic-s4-02-choice-1": "误把已有量当成还需量。",
+        "comic-s4-02-choice-2": "误按少一杯或两杯求差，未使用三杯总量。",
+        "comic-s4-02-choice-4": "600是所需总量，尚未扣除已有量。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "两杯各 200 毫升，合计 2×200＝400 毫升。",
+      "editReason": "保留杯数与容量语义，加已有量形成两步计算。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "目标为3×200＝600毫升；扣除已有150，还需450毫升。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-03",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-03-fact",
       "stage": 3,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构路线图中，甲线和乙线只有“青桥站”共同停靠。要从甲线换到乙线，应选哪站？",
+      "difficulty": 3,
+      "difficultyRationale": "分别合计两条路线的首段、候车与末段，再比较相同预算。",
+      "prompt": "甲线从起点到青桥8分钟、白石13分钟；青桥转乙到终点12分钟、白石转乙4分钟，两站都候车3分钟。预算21分钟，在哪换可按时到？",
       "options": [
         {
           "id": "comic-s4-03-choice-1",
@@ -2019,41 +2183,44 @@
         },
         {
           "id": "comic-s4-03-choice-2",
-          "text": "只停甲线的站"
+          "text": "白石站"
         },
         {
           "id": "comic-s4-03-choice-3",
-          "text": "只停乙线的站"
+          "text": "两站都可以"
         },
         {
           "id": "comic-s4-03-choice-4",
-          "text": "任意站"
+          "text": "两站都不可以"
         }
       ],
-      "correctId": "comic-s4-03-choice-1",
-      "explanation": "换线需到两条线都停靠的站；题面唯一共同站是青桥站。",
+      "correctId": "comic-s4-03-choice-2",
+      "explanation": "青桥共8＋3＋12＝23分钟；白石共13＋3＋4＝20分钟，仅白石不超21分钟。",
       "distractorNotes": {
-        "comic-s4-03-choice-2": "“只停甲线的站”不符合题面条件。换线需到两条线都停靠的站；题面唯一共同站是青桥站。",
-        "comic-s4-03-choice-3": "“只停乙线的站”不符合题面条件。换线需到两条线都停靠的站；题面唯一共同站是青桥站。",
-        "comic-s4-03-choice-4": "“任意站”不符合题面条件。换线需到两条线都停靠的站；题面唯一共同站是青桥站。"
+        "comic-s4-03-choice-1": "青桥首段虽短，但全程23分钟超过21分钟。",
+        "comic-s4-03-choice-3": "青桥全程23分钟超时，不能说两站都可行。",
+        "comic-s4-03-choice-4": "白石全程20分钟，不超过21分钟预算。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "换线需到两条线都停靠的站；题面唯一共同站是青桥站。",
+      "editReason": "保留换线考点；去掉可直接查目的地的答案线索，改成候车不可省略的两路合计判断。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "青桥共8＋3＋12＝23分钟；白石共13＋3＋4＝20分钟，仅白石不超21分钟。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-04",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-04-fact",
       "stage": 3,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构群公告说明“安排如有变化，以最新置顶为准”。有人只保存了旧截图，能保证它仍是最新安排吗？",
+      "difficulty": 3,
+      "difficultyRationale": "先比较版本新旧，再识别最新时点仍缺证据。",
+      "prompt": "安排以最新置顶为准。09:00截图写南门，09:10置顶改东门；10:00出发前还未检查有无再改。能保证去东门正确吗？",
       "options": [
         {
           "id": "comic-s4-04-choice-1",
@@ -2065,27 +2232,30 @@
         }
       ],
       "correctId": "comic-s4-04-choice-2",
-      "explanation": "旧截图不随置顶更新，题面也允许安排变化，因此不能保证。",
+      "explanation": "09:10时东门比截图新，但出发前未检查后续更新，不能保证仍为最新安排。",
       "distractorNotes": {
-        "comic-s4-04-choice-1": "“能保证”不符合题面条件。旧截图不随置顶更新，题面也允许安排变化，因此不能保证。"
+        "comic-s4-04-choice-1": "把比旧截图新误当成出发时仍是最新。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "旧截图不随置顶更新，题面也允许安排变化，因此不能保证。",
+      "editReason": "保留最新置顶规则，加入较新但可能过期的版本。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "09:10时东门比截图新，但出发前未检查后续更新，不能保证仍为最新安排。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-05",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-05-fact",
       "stage": 3,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "绘图练习中，蓝色不透明图层完整盖住橙色图层。重叠处显示什么颜色？",
+      "difficulty": 3,
+      "difficultyRationale": "按层次向下查找，结合透明性及完整覆盖判断颜色。",
+      "prompt": "同一区域底层橙色，上层蓝色不透明；蓝层上还有透明层。蓝层完整覆盖该处，透明层不改变颜色。该处显示？",
       "options": [
         {
           "id": "comic-s4-05-choice-1",
@@ -2097,171 +2267,183 @@
         },
         {
           "id": "comic-s4-05-choice-3",
-          "text": "自动变绿"
+          "text": "蓝橙混合色"
         },
         {
           "id": "comic-s4-05-choice-4",
-          "text": "必然透明"
+          "text": "透明无色"
         }
       ],
       "correctId": "comic-s4-05-choice-2",
-      "explanation": "上层是完整覆盖的不透明蓝色，所以重叠处显示蓝色。",
+      "explanation": "透明顶层不改变颜色；其下不透明蓝层完整遮住橙层，故显示蓝色。",
       "distractorNotes": {
-        "comic-s4-05-choice-1": "“橙色”不符合题面条件。上层是完整覆盖的不透明蓝色，所以重叠处显示蓝色。",
-        "comic-s4-05-choice-3": "“自动变绿”不符合题面条件。上层是完整覆盖的不透明蓝色，所以重叠处显示蓝色。",
-        "comic-s4-05-choice-4": "“必然透明”不符合题面条件。上层是完整覆盖的不透明蓝色，所以重叠处显示蓝色。"
+        "comic-s4-05-choice-1": "橙层被不透明蓝层遮住。",
+        "comic-s4-05-choice-3": "不透明完整覆盖不是与底色混合。",
+        "comic-s4-05-choice-4": "透明顶层不删除其下可见的蓝色。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "上层是完整覆盖的不透明蓝色，所以重叠处显示蓝色。",
+      "editReason": "保留不透明完整覆盖语义，增加透明顶层及常见混色误解。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "透明顶层不改变颜色；其下不透明蓝层完整遮住橙层，故显示蓝色。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-06",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-06-fact",
       "stage": 3,
       "domain": "sports",
       "cognition": "common",
-      "prompt": "小满的虚构练习计划是三组，每组五次。按计划总共做多少次？",
+      "difficulty": 3,
+      "difficultyRationale": "分别计算计划量与已完成量，再求缺口。",
+      "prompt": "计划三组每组五次；已完成两组每组三次，还差多少次？",
       "options": [
         {
           "id": "comic-s4-06-choice-1",
-          "text": "8 次"
+          "text": "6 次"
         },
         {
           "id": "comic-s4-06-choice-2",
-          "text": "10 次"
+          "text": "8 次"
         },
         {
           "id": "comic-s4-06-choice-3",
-          "text": "15 次"
+          "text": "9 次"
         },
         {
           "id": "comic-s4-06-choice-4",
-          "text": "35 次"
+          "text": "15 次"
         }
       ],
       "correctId": "comic-s4-06-choice-3",
-      "explanation": "三组各五次，合计 3×5＝15 次。",
+      "explanation": "目标3×5＝15次，已做2×3＝6次；差15－6＝9次。",
       "distractorNotes": {
-        "comic-s4-06-choice-1": "“8 次”不符合题面条件。三组各五次，合计 3×5＝15 次。",
-        "comic-s4-06-choice-2": "“10 次”不符合题面条件。三组各五次，合计 3×5＝15 次。",
-        "comic-s4-06-choice-4": "“35 次”不符合题面条件。三组各五次，合计 3×5＝15 次。"
+        "comic-s4-06-choice-1": "6是已完成量，不是缺口。",
+        "comic-s4-06-choice-2": "把目标组数与每组次数相加为8，没有计算两份总量。",
+        "comic-s4-06-choice-4": "15是计划总量，没有扣除已完成量。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "三组各五次，合计 3×5＝15 次。",
+      "editReason": "保留组数乘次数考点，加入不同组数与完成进度。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "目标3×5＝15次，已做2×3＝6次；差15－6＝9次。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-07",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-07-fact",
       "stage": 3,
       "domain": "language",
       "cognition": "internet",
-      "prompt": "小满接到一堆临时任务，说“好家伙，又来一波”，又解释是在感叹任务多。她在感叹什么？",
+      "difficulty": 3,
+      "difficultyRationale": "从前后语境推断表达指向，再联算增减任务量。",
+      "prompt": "原有4项任务，上午加3项、完成2项，下午又加2项。小满说“又来一波”，这里指什么？此时未完成多少？",
       "options": [
         {
           "id": "comic-s4-07-choice-1",
-          "text": "任务增加了"
+          "text": "又新增任务，剩7项"
         },
         {
           "id": "comic-s4-07-choice-2",
-          "text": "发现新物种"
+          "text": "任务全完成，剩0项"
         },
         {
           "id": "comic-s4-07-choice-3",
-          "text": "已经全做完"
+          "text": "只指上午增加，剩5项"
         },
         {
           "id": "comic-s4-07-choice-4",
-          "text": "大家正在投票"
+          "text": "任务减少了，剩2项"
         }
       ],
       "correctId": "comic-s4-07-choice-1",
-      "explanation": "补充解释已经说明她在感叹任务多，不是在报告别的事情。",
+      "explanation": "下午再增加是“又来一波”的语境；未完成4＋3－2＋2＝7项。",
       "distractorNotes": {
-        "comic-s4-07-choice-2": "“发现新物种”不符合题面条件。补充解释已经说明她在感叹任务多，不是在报告别的事情。",
-        "comic-s4-07-choice-3": "“已经全做完”不符合题面条件。补充解释已经说明她在感叹任务多，不是在报告别的事情。",
-        "comic-s4-07-choice-4": "“大家正在投票”不符合题面条件。补充解释已经说明她在感叹任务多，不是在报告别的事情。"
+        "comic-s4-07-choice-2": "记录还有7项未完成，不能说全完成。",
+        "comic-s4-07-choice-3": "遗漏下午再次增加的2项，误把表达指向上午。",
+        "comic-s4-07-choice-4": "下午新增使任务增加，2是新增数而非剩余数。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "补充解释已经说明她在感叹任务多，不是在报告别的事情。",
+      "editReason": "去掉直接补充释义，替换无关干扰并加入任务记录计算。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "下午再增加是“又来一波”的语境；未完成4＋3－2＋2＝7项。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-08",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-08-fact",
       "stage": 3,
       "domain": "life",
       "cognition": "context",
-      "prompt": "虚构分类游戏要求“把圆形卡放进圆框”。哪张卡符合这次要求？",
+      "difficulty": 3,
+      "difficultyRationale": "先按形状和完整性筛选合格张数，再计算得分，两阶段结合三个数据条件。",
+      "prompt": "分类只收圆形且无缺口的卡。甲3张完整圆，乙2张缺口圆，丙4张完整方形；每张合格卡换2分。哪项正确？",
       "options": [
         {
           "id": "comic-s4-08-choice-1",
-          "text": "三角形卡"
+          "text": "甲乙都收，共10分"
         },
         {
           "id": "comic-s4-08-choice-2",
-          "text": "圆形卡"
+          "text": "只收甲，共6分"
         },
         {
           "id": "comic-s4-08-choice-3",
-          "text": "方形卡"
+          "text": "只收丙，共8分"
         },
         {
           "id": "comic-s4-08-choice-4",
-          "text": "长方形卡"
+          "text": "全部都收，共18分"
         }
       ],
       "correctId": "comic-s4-08-choice-2",
-      "explanation": "要求按形状匹配，圆形卡与圆框一致。",
+      "explanation": "先筛选圆形且无缺口，只有甲3张合格；按每张2分，得3×2＝6分。",
       "distractorNotes": {
-        "comic-s4-08-choice-1": "“三角形卡”不符合题面条件。要求按形状匹配，圆形卡与圆框一致。",
-        "comic-s4-08-choice-3": "“方形卡”不符合题面条件。要求按形状匹配，圆形卡与圆框一致。",
-        "comic-s4-08-choice-4": "“长方形卡”不符合题面条件。要求按形状匹配，圆形卡与圆框一致。"
+        "comic-s4-08-choice-1": "把乙2张缺口圆也计入合格数，漏查完整性。",
+        "comic-s4-08-choice-3": "丙4张虽完整，却不符合圆形条件。",
+        "comic-s4-08-choice-4": "把三类共9张都换分，未筛掉乙丙的不合格卡。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "要求按形状匹配，圆形卡与圆框一致。",
+      "editReason": "保留形状分类，增加完整性及换分规则，要求筛选后计数而非单词对应。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "先筛选圆形且无缺口，只有甲3张合格；按每张2分，得3×2＝6分。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-09",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-09-fact",
       "stage": 3,
       "domain": "travel",
       "cognition": "common",
-      "prompt": "小满 09:00 出发，09:45 到达，途中没有跨越日期。经过多少分钟？",
+      "difficulty": 3,
+      "difficultyRationale": "先算钟表时间差，再区分行走与休息。",
+      "prompt": "小满09:05出发，09:50到达，中途休息8分钟且未跨日。实际行走多少分钟？",
       "options": [
         {
           "id": "comic-s4-09-choice-1",
-          "text": "15 分钟"
+          "text": "8 分钟"
         },
         {
           "id": "comic-s4-09-choice-2",
-          "text": "30 分钟"
+          "text": "37 分钟"
         },
         {
           "id": "comic-s4-09-choice-3",
@@ -2269,33 +2451,36 @@
         },
         {
           "id": "comic-s4-09-choice-4",
-          "text": "90 分钟"
+          "text": "53 分钟"
         }
       ],
-      "correctId": "comic-s4-09-choice-3",
-      "explanation": "09:45 与 09:00 相差 45 分钟。",
+      "correctId": "comic-s4-09-choice-2",
+      "explanation": "总经过45分钟；扣除休息8分钟，实际行走37分钟。",
       "distractorNotes": {
-        "comic-s4-09-choice-1": "“15 分钟”不符合题面条件。09:45 与 09:00 相差 45 分钟。",
-        "comic-s4-09-choice-2": "“30 分钟”不符合题面条件。09:45 与 09:00 相差 45 分钟。",
-        "comic-s4-09-choice-4": "“90 分钟”不符合题面条件。09:45 与 09:00 相差 45 分钟。"
+        "comic-s4-09-choice-1": "8分钟是休息时长，不是行走时长。",
+        "comic-s4-09-choice-3": "45分钟包含休息，未扣除8分钟。",
+        "comic-s4-09-choice-4": "误把休息加到总经过时间上。"
       },
       "kind": "short",
       "seconds": 25,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "09:45 与 09:00 相差 45 分钟。",
+      "editReason": "保留时间差考点，加入停留量，替换明显无关数字。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "总经过45分钟；扣除休息8分钟，实际行走37分钟。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-10",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-10-fact",
       "stage": 3,
       "domain": "digital",
       "cognition": "context",
-      "prompt": "虚构网页只说“标题已更新”，没有交代正文。能直接确定正文也更新了吗？",
+      "difficulty": 3,
+      "difficultyRationale": "检查时间标记与日志所证明的对象，辨别证据边界。",
+      "prompt": "网页标题09:00更新，正文仍标08:00；后台日志仅写“标题保存成功”，没有正文记录。能确定正文也更新了吗？",
       "options": [
         {
           "id": "comic-s4-10-choice-1",
@@ -2307,155 +2492,170 @@
         }
       ],
       "correctId": "comic-s4-10-choice-2",
-      "explanation": "更新标题不等于更新正文，题面没有提供正文已更新的证据。",
+      "explanation": "标题更新时间和保存日志只证明标题操作；正文仍旧且无更新记录，无法确定正文已更新。",
       "distractorNotes": {
-        "comic-s4-10-choice-1": "“能确定”不符合题面条件。更新标题不等于更新正文，题面没有提供正文已更新的证据。"
+        "comic-s4-10-choice-1": "把标题的时间或保存成功日志越界用于证明正文更新。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "更新标题不等于更新正文，题面没有提供正文已更新的证据。",
+      "editReason": "保留标题不等于正文考点，增加时间及日志两类证据。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "标题更新时间和保存日志只证明标题操作；正文仍旧且无更新记录，无法确定正文已更新。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-11",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-11-fact",
       "stage": 3,
       "domain": "language",
       "cognition": "context",
-      "prompt": "虚构任务要求“至少完成一项”，小满完成了两项。仅按这条数量要求，她达标了吗？",
+      "difficulty": 3,
+      "difficultyRationale": "先核查数量与必含项目，再分别合计两人的用时，判断全部条件。",
+      "prompt": "任务至少2项且含整理，用时不超15分钟。小满整理6分钟、校对8分钟；小禾整理7分钟、绘图9分钟。说两人都达标，正确吗？",
       "options": [
         {
           "id": "comic-s4-11-choice-1",
-          "text": "达标"
+          "text": "正确"
         },
         {
           "id": "comic-s4-11-choice-2",
-          "text": "没达标"
+          "text": "不正确"
         }
       ],
-      "correctId": "comic-s4-11-choice-1",
-      "explanation": "“至少一项”包含一项及更多项；两项满足这条最低要求。",
+      "correctId": "comic-s4-11-choice-2",
+      "explanation": "两人均有2项且含整理；小满6＋8＝14分钟达标，小禾7＋9＝16分钟超时。",
       "distractorNotes": {
-        "comic-s4-11-choice-2": "“没达标”不符合题面条件。“至少一项”包含一项及更多项；两项满足这条最低要求。"
+        "comic-s4-11-choice-1": "只核对数量及整理项目，忽略小禾两项合计16分钟超过15分钟。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "“至少一项”包含一项及更多项；两项满足这条最低要求。",
+      "editReason": "保留“至少”的数量语义，增加必含项目、用时上限及两人的分段记录。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "两人均有2项且含整理；小满6＋8＝14分钟达标，小禾7＋9＝16分钟超时。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-12",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-12-fact",
       "stage": 3,
       "domain": "life",
       "cognition": "context",
-      "prompt": "小满连续三次试做都成功，记录还写着“仅测试这三次”。能直接断言以后每次都一定成功吗？",
+      "difficulty": 3,
+      "difficultyRationale": "比较已观测结果，再分辨描述记录与预测未来的证据要求。",
+      "prompt": "甲法同条件试3次全成功；乙法同条件试3次成功2次。可说甲在这些记录中成功更多，并保证甲以后每次成功吗？",
       "options": [
         {
           "id": "comic-s4-12-choice-1",
-          "text": "能断言"
+          "text": "两点都可以说"
         },
         {
           "id": "comic-s4-12-choice-2",
-          "text": "不能断言"
+          "text": "只可说本次记录成功更多"
         }
       ],
       "correctId": "comic-s4-12-choice-2",
-      "explanation": "三次成功是已观察的结果，题面没有保证未来每次都会成功。",
+      "explanation": "记录中甲3次胜于乙2次；有限试做没有保证未来每次成功。",
       "distractorNotes": {
-        "comic-s4-12-choice-1": "“能断言”不符合题面条件。三次成功是已观察的结果，题面没有保证未来每次都会成功。"
+        "comic-s4-12-choice-1": "记录内的优势不能证明未来无例外地成功。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "三次成功是已观察的结果，题面没有保证未来每次都会成功。",
+      "editReason": "保留有限试验不能保证未来考点，加成立的记录比较作混合结论。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "记录中甲3次胜于乙2次；有限试做没有保证未来每次成功。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-13",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-13-fact",
       "stage": 3,
       "domain": "travel",
       "cognition": "context",
-      "prompt": "虚构路线说明“甲线到青桥，转乙线到终点”。甲线不经过终点。全程只坐甲线是否符合这条路线？",
+      "difficulty": 3,
+      "difficultyRationale": "合计行驶与换乘等待三段时间，再比较上限。",
+      "prompt": "甲线到青桥需12分钟，转乙候车5分钟，到终点再8分钟；全程预算24分钟。按此路线并不换方案，能按时到吗？",
       "options": [
         {
           "id": "comic-s4-13-choice-1",
-          "text": "符合"
+          "text": "能"
         },
         {
           "id": "comic-s4-13-choice-2",
-          "text": "不符合"
+          "text": "不能"
         }
       ],
       "correctId": "comic-s4-13-choice-2",
-      "explanation": "题面路线需要在青桥换乘乙线；只坐甲线到不了题面终点。",
+      "explanation": "需12＋5＋8＝25分钟，超过24分钟预算1分钟；换乘不能省略候车。",
       "distractorNotes": {
-        "comic-s4-13-choice-1": "“符合”不符合题面条件。题面路线需要在青桥换乘乙线；只坐甲线到不了题面终点。"
+        "comic-s4-13-choice-1": "漏算候车5分钟会得20分钟，完整路线实际需25分钟。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "题面路线需要在青桥换乘乙线；只坐甲线到不了题面终点。",
+      "editReason": "保留必须换乙线到终点语义，加入路线用时与预算。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "需12＋5＋8＝25分钟，超过24分钟预算1分钟；换乘不能省略候车。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-14",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-14-fact",
       "stage": 3,
       "domain": "entertainment",
       "cognition": "context",
-      "prompt": "虚构节目把一次练习镜头标为“幕后排练”。能单凭这个标签把它当作正式比赛结果吗？",
+      "difficulty": 3,
+      "difficultyRationale": "先按事件记录分别累计双方得分，再与排练记录比较，辨别正式结果与排练结果。",
+      "prompt": "旧排练画面比分2:1；正式赛日志从0:0起，甲先得2分、乙再得1分、甲最后得1分，之后结束。核对两份记录，哪项正确？",
       "options": [
         {
           "id": "comic-s4-14-choice-1",
-          "text": "能"
+          "text": "正式赛果2:1，与排练相同"
         },
         {
           "id": "comic-s4-14-choice-2",
-          "text": "不能"
+          "text": "正式赛果3:1，与排练不同"
         }
       ],
       "correctId": "comic-s4-14-choice-2",
-      "explanation": "排练和正式比赛是不同场合，标签没有提供正式比赛结果。",
+      "explanation": "正式日志中甲2＋1＝3分、乙1分，赛果3:1；排练为2:1，两份结果不同。",
       "distractorNotes": {
-        "comic-s4-14-choice-1": "“能”不符合题面条件。排练和正式比赛是不同场合，标签没有提供正式比赛结果。"
+        "comic-s4-14-choice-1": "漏算正式日志中甲最后得到的1分，误把排练2:1当成正式最终结果。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "排练和正式比赛是不同场合，标签没有提供正式比赛结果。",
+      "editReason": "移除待复核等一句即可否定的提示，改为必须累积分数并比对两份记录的结果归属。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "正式日志中甲2＋1＝3分、乙1分，赛果3:1；排练为2:1，两份结果不同。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     },
     {
       "id": "comic-s4-15",
-      "revision": 1,
+      "revision": 2,
       "factCluster": "comic-s4-15-fact",
       "stage": 3,
       "domain": "sports",
       "cognition": "context",
-      "prompt": "虚构挑战规定“到达终点且拿到印章才完成”。小满只到达终点，还没有印章。挑战完成了吗？",
+      "difficulty": 3,
+      "difficultyRationale": "依次核对到达、两枚凭证的日期与种类、补章状态，排除各不完整的证据。",
+      "prompt": "挑战须到终点且持当天完成章，过路章不算。小满已到终点，卡上有昨天完成章和今天过路章；今天完成章要在尚未开放的B站领。完成了吗？",
       "options": [
         {
           "id": "comic-s4-15-choice-1",
@@ -2467,16 +2667,17 @@
         }
       ],
       "correctId": "comic-s4-15-choice-2",
-      "explanation": "规则的两个条件都必须满足，只到终点还缺少印章。",
+      "explanation": "昨天完成章日期无效，今天过路章种类无效；B站尚未领章，故未满足当天完成章条件。",
       "distractorNotes": {
-        "comic-s4-15-choice-1": "“已完成”不符合题面条件。规则的两个条件都必须满足，只到终点还缺少印章。"
+        "comic-s4-15-choice-1": "混合两枚章各自满足的条件，误当作已持一枚当天完成章；尚未开放也不能视为已领取。"
       },
       "kind": "scenario",
       "seconds": 40,
       "lifecycle": "draft",
       "sourceType": "original_scenario_or_stable_arithmetic",
-      "editorialNote": "原创文本单次审校；未完成独立事实/表述双审；仅用于开发原型",
-      "evidenceNote": "规则的两个条件都必须满足，只到终点还缺少印章。",
+      "editReason": "保留到终点且持印章的规则，增加日期、章种与未领取状态，检验完整条件。",
+      "editorialNote": "原创文本逐题单作者审校；未完成独立事实/表述双审；仅用于开发原型",
+      "evidenceNote": "昨天完成章日期无效，今天过路章种类无效；B站尚未领章，故未满足当天完成章条件。",
       "scope": "fictional_context_or_stable_units",
       "rightsBasis": "original_copy"
     }
