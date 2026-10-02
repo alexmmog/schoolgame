@@ -10,6 +10,7 @@
 /art-review/
 
 # Cocos generated caches and builds
+/.worktrees/
 /project/library/
 /project/temp/
 /project/local/
